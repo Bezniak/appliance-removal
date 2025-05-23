@@ -10,8 +10,8 @@ import {
     NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
-import { services } from "@/data";
+import {usePathname} from 'next/navigation';
+import {services} from "@/data";
 
 // Базовый класс ссылки
 const baseLinkClass =
@@ -21,7 +21,7 @@ const baseLinkClass =
 const activeLinkClass = "text-lime-600 after:scale-x-100";
 
 // Компонент для одного элемента навигации
-const NavLinkItem = ({ href, children }) => {
+const NavLinkItem = ({href, children}) => {
     const pathname = usePathname();
     const isActive = pathname === href;
 
@@ -50,7 +50,8 @@ const DesktopNav = () => {
                     <NavigationMenuTrigger className={baseLinkClass + " hover:cursor-pointer"}>
                         Услуги
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="p-6 bg-white shadow-xl rounded-lg left-0 min-w-[800px] overflow-y-auto">
+                    <NavigationMenuContent
+                        className="p-6 bg-white shadow-xl rounded-lg left-0 min-w-[800px] overflow-y-auto">
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                             {services.map((service) => (
                                 <NavigationMenuLink asChild key={service.href}>
