@@ -7,7 +7,7 @@ import {Clock9, MapPin, Phone} from 'lucide-react';
 
 const NavbarInfoBlock = () => {
     return (
-        <div className='hidden py-6 px-6 md:px-8 md:flex items-center justify-between border-b'>
+        <div className='hidden py-6 !px-12 md:px-8 md:flex items-center justify-between border-b'>
             <div>
                 <Link href="/" className="flex items-center gap-3">
                     <Image src="/logo.svg" alt="Логотип" width={52} height={52} priority/>
@@ -18,7 +18,7 @@ const NavbarInfoBlock = () => {
                 </Link>
             </div>
 
-            <div className='flex items-center justify-between gap-16 w-1/2'>
+            <div className='flex items-center justify-center gap-16 w-1/2'>
                 <div className='relative flex flex-col items-center gap-2 text-gray-700'>
                     <Phone className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
                     Позвоните нам
