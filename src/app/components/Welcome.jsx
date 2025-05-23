@@ -6,7 +6,7 @@ import {Phone} from 'lucide-react';
 
 const Welcome = () => {
     return (
-        <section className="h-screen flex items-center bg-white">
+        <section className="md:h-screen flex items-center bg-white py-20">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-16 px-4">
                 <div className="w-full md:w-1/2 flex justify-center">
                     <Image
@@ -20,7 +20,7 @@ const Welcome = () => {
                 </div>
 
                 <div className="w-full md:w-1/2">
-                    <h1 className="text-6xl mb-6">
+                    <h1 className="text-center md:text-left text-3xl md:text-6xl mb-6">
                         Добро пожаловать в компанию <br/><span className="text-yellow-500 font-black mt-3 block">"ВЫВОЗ ТЕХНИКИ"</span>
                     </h1>
                     <p className="text-gray-700 mb-9 leading-9">
@@ -36,16 +36,16 @@ const Welcome = () => {
                         услуги
                         бесплатного вывоза бытовой техники по всему Минску, включая все районы и частный сектор.
                     </p>
-                    <div className="flex flex-col md:flex-row items-start sm:items-center gap-16">
+                    <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-10 md:gap-16">
                         <Button
                             asChild
-                            className="bg-yellow-500 hover:bg-lime-600 text-white text-lg font-bold uppercase px-9 py-8 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
+                            className="bg-yellow-500 hover:bg-lime-600 text-white text-lg md:text-2xl font-bold uppercase px-9 py-8 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                         >
                             <a href="#">Подробнее</a>
                         </Button>
                         <a
                             href="tel:+375297621847"
-                            className="flex items-center gap-2 text-2xl font-bold text-yellow-500 hover:text-lime-600 transition"
+                            className="flex items-center gap-2 text-lg md:text-2xl font-bold text-yellow-500 hover:text-lime-600 transition"
                         >
                             <Phone className="w-6 h-6"/>
                             +375 29 762 18 47

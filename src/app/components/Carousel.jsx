@@ -57,8 +57,8 @@ export function CarouselPlugin() {
                 // Определим выравнивание текста
                 const isTextRight = index === 0 || index === 1;
                 const textPositionClass = isTextRight
-                    ? "right-20 text-right items-end"
-                    : "left-20 text-left items-start";
+                    ? "right-5 pl-5 md:right-20 text-right items-end"
+                    : "left-5 pr-5 md:left-20 text-left items-start";
 
                 return (
                     <SwiperSlide key={index} className="relative w-full h-screen">
@@ -66,12 +66,12 @@ export function CarouselPlugin() {
                             src={slide.image}
                             alt={slide.title1}
                             fill
-                            className="object-cover"
+                            className="object-cover md:object-cover sm:object-contain"
                             priority
                         />
                         <div className="absolute inset-0 bg-black/50" />
                         <div
-                            className={`absolute top-1/2 transform -translate-y-1/2 z-10 text-white max-w-2xl space-y-4 flex flex-col ${textPositionClass}`}
+                            className={`absolute top-1/2 transform -translate-y-1/2 z-10 text-white w-fit md:max-w-3xl space-y-4 flex flex-col ${textPositionClass}`}
                         >
                             <h1 className="text-3xl md:text-6xl font-light">{slide.title1}</h1>
                             <h2 className="text-4xl md:text-7xl font-semibold">{slide.title2}</h2>
