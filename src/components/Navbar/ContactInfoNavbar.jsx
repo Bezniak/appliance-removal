@@ -19,7 +19,7 @@ export const ContactInfoNavbar = () => {
 
             <div className='flex items-center justify-center gap-16 w-1/2'>
                 <div className='relative flex flex-col items-center gap-2 text-gray-700'>
-                    <FaPhone className="absolute inset-0 h-full w-full text-lime-600 opacity-20"/>
+                    <FaPhone className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
                     Позвоните нам
                     <a
                         href="tel:+375333669979"
@@ -29,20 +29,20 @@ export const ContactInfoNavbar = () => {
                     </a>
                 </div>
                 <div className="relative flex flex-col items-center gap-2 text-gray-700">
-                    <FaLocationPin className="absolute inset-0 h-full w-full text-lime-600 opacity-20"/>
+                    <FaLocationPin className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
                     <p>Территория обслуживания</p>
                     <p className="text-lg font-bold text-lime-600">г. Минск</p>
                 </div>
 
                 <div className='relative flex flex-col items-center gap-2 text-gray-700'>
-                    <TbClockHour9Filled className="absolute inset-0 h-full w-full text-lime-600 opacity-20"/>
+                    <TbClockHour9Filled className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
                     <p>Часы работы</p>
                     <p className="text-lg font-bold text-lime-600">09:00 - 19:00</p>
                 </div>
             </div>
 
             <Button
-                className="bg-lime-600 uppercase hover:bg-yellow-500 text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95">
+                className="!bg-lime-600 uppercase hover:bg-yellow-500 text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95">
                 Подать заявку
             </Button>
         </div>

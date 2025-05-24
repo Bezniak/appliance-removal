@@ -73,8 +73,7 @@ export function Carousel() {
                             <h2 className="text-4xl md:text-7xl font-semibold">{slide.title2}</h2>
                             <p className="text-md md:text-xl font-light">{slide.description}</p>
                             <Button
-                                asChild
-                                className="mt-12 bg-yellow-500 hover:bg-lime-600 text-white text-lg font-bold uppercase px-12 py-8 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+                                className="mt-12 !bg-yellow-500 hover:bg-lime-600 text-white text-lg font-bold uppercase px-12 py-8 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
                             >
                                 <a href={slide.buttonLink}>{slide.buttonText}</a>
                             </Button>

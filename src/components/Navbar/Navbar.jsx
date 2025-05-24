@@ -112,8 +112,8 @@ export const Navbar = () => {
                                     className={`z-10 ${isSitesDropdownOpen ? '' : 'hidden'} absolute left-0 right-0 mx-auto mt-2 bg-white rounded-lg shadow-xl max-w-screen-xl px-8 py-6`}
                                 >
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-                                        {services.map((item, index) => (
-                                            <div key={index}>
+                                        {services.map((item) => (
+                                            <div key={item.id}>
                                                 <NavLink
                                                     to={item.href} // или динамический путь, если у тебя есть
                                                     className="block text-gray-800 hover:text-lime-600 transition"
