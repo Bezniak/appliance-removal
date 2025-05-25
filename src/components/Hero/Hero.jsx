@@ -14,7 +14,7 @@ const Hero = () => {
                     <h1 className="text-3xl md:text-5xl text-white mb-4">
                         Нужно срочно избавиться от старой техники?
                     </h1>
-                    <div className="w-16 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                    <div className="mt-4 mb-10 w-1/2 h-1 mx-auto bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full shadow-md"></div>
                     <p className="text-white text-lg md:text-xl mb-8 leading-relaxed">
                         Бесплатно и быстро вывезем ненужную бытовую технику по Минску.
                         Освободите место в доме уже сегодня — мы сами всё вынесем и погрузим.
@@ -22,7 +22,7 @@ const Hero = () => {
 
                     {/* Кнопка выходит за рамку вниз */}
                     <button
-                        className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
+                        className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-yellow-500 hover:bg-lime-600 uppercase tracking-widest text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                     >
                         Заказать вывоз
                     </button>

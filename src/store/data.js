@@ -232,3 +232,74 @@ export const services = [
         description: "Радиодетали и платы вывозим бесплатно по Минску — быстро и надежно."
     },
 ];
+
+
+
+export const testimonials = [
+    {
+        name: "Анна Смирнова",
+        role: "Клиент",
+        review:
+            "Заказала вывоз стиральной машины — приехали быстро и бесплатно, вежливые ребята, всё аккуратно сделали!",
+        img: "https://randomuser.me/api/portraits/women/10.jpg",
+        rating: 5,
+    },
+    {
+        name: "Игорь Лещенко",
+        role: "Клиент",
+        review:
+            "Очень удобно! Старый холодильник унесли бесплатно, теперь больше места на кухне.",
+        img: "https://randomuser.me/api/portraits/men/1.jpg",
+        rating: 4,
+    },
+    {
+        name: "Мария Коваль",
+        role: "Клиент",
+        review:
+            "Оперативно и бесплатно забрали старую плиту. Сервис на высоте!",
+        img: "",
+        rating: 5,
+    },
+    {
+        name: "Сергей Иванов",
+        role: "Клиент",
+        review:
+            "Сомневался, но всё прошло отлично. Курьеры были очень вежливы.",
+        img: "https://randomuser.me/api/portraits/men/3.jpg",
+        rating: 4,
+    },
+    {
+        name: "Елена Петрова",
+        role: "Клиент",
+        review:
+            "Быстро вывезли старую технику, даже помогли вынести с пятого этажа. Спасибо!",
+        img: "https://randomuser.me/api/portraits/women/4.jpg",
+        rating: 5,
+    },
+    {
+        name: "Андрей Мельников",
+        role: "Клиент",
+        review:
+            "Хороший сервис, понравилось, что всё бесплатно и по времени чётко.",
+        img: "https://randomuser.me/api/portraits/men/9.jpg",
+        rating: 4,
+    },
+    {
+        name: "Оксана Бондарь",
+        role: "Клиент",
+        review:
+            "Удивительно, но всё действительно бесплатно. Буду рекомендовать друзьям.",
+        img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+        rating: 5,
+    },
+    {
+        name: "Дмитрий Соколов",
+        role: "Клиент",
+        review:
+            "Вывоз прошёл идеально. Заказал через сайт — через 2 часа всё забрали!",
+        img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+        rating: 5,
+    },
+];
+
+
