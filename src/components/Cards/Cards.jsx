@@ -1,5 +1,7 @@
 import {useState} from "react";
 import {services} from "../../store/data.js";
+import {NavLink} from "react-router-dom";
+import {handleClick} from "../../common/helpers.js";
 
 export function Cards() {
     const [visibleCount, setVisibleCount] = useState(6);
@@ -24,30 +26,36 @@ export function Cards() {
                     и гарантируем результат, который превзойдет ваши ожидания.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                    {services.slice(0, visibleCount).map(({id, title, img, description}) => (
+                    {services.slice(0, visibleCount).map(({ id, title, img, description, href }) => (
                         <div
                             key={id}
                             className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:border-lime-500 cursor-pointer"
                         >
                             <div className="relative overflow-hidden h-56">
-                                <img
-                                    src={img}
-                                    alt={title}
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                                />
+                                <NavLink to={href} onClick={handleClick}>
+                                    <img
+                                        src={img}
+                                        alt={title}
+                                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                    />
+                                </NavLink>
                             </div>
                             <div className="p-6 text-center">
-                                <h3 className="text-2xl font-bold mb-3 text-gray-800 flex justify-center items-center gap-3">
+                                <NavLink
+                                    to={href}
+                                    onClick={handleClick}
+                                    className="text-2xl font-bold mb-3 text-gray-800 flex justify-center items-center gap-3"
+                                >
                                     {title}
-                                </h3>
-                                <div
-                                    className="mx-auto my-5 w-20 h-1 bg-gradient-to-r from-lime-400 to-lime-600 rounded-full shadow-md"></div>
+                                </NavLink>
+                                <div className="mx-auto my-5 w-20 h-1 bg-gradient-to-r from-lime-400 to-lime-600 rounded-full shadow-md"></div>
                                 <p className="text-gray-600 text-base leading-relaxed tracking-wide">
                                     {description}
                                 </p>
                             </div>
                         </div>
                     ))}
+
                 </div>
                 {!isAllVisible && (
                     <div className="flex justify-center mt-10">

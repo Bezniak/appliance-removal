@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound/NotFound.jsx";
 import Home from "./pages/Home.jsx";
 import {About} from "./components/About/About.jsx";
 import {Contacts} from "./components/Contacts/Contacts.jsx";
+import Service from "./components/Services/Services.jsx";
 
 
 const Layout = () => {
@@ -43,6 +44,10 @@ const App = () => {
                 {
                     path: ROUTES.CONTACT,
                     element: <Contacts/>
+                },
+                {
+                    path: ROUTES.SERVICES,
+                    element: <Service/>
                 },
             ]
         },
