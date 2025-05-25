@@ -1,7 +1,7 @@
 import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
 import {ROUTES} from "./config/routes.js";
 import {Navbar} from "./components/Navbar/Navbar.jsx";
-import {Footer} from "./components/Footer/Footer.jsx";
+import {FooterComponent} from "./components/Footer/Footer.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Home from "./pages/Home.jsx";
 import {About} from "./components/About/About.jsx";
@@ -15,7 +15,7 @@ const Layout = () => {
             <div className="flex-grow-1">
                 <Outlet/>
             </div>
-            <Footer/>
+            <FooterComponent/>
         </div>
     );
 };
