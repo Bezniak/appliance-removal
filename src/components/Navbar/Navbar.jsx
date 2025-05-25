@@ -37,7 +37,7 @@ export const Navbar = () => {
     return (
         <div>
             <ContactInfoNavbar/>
-            <nav className="stickybg-white border-gray-200 w-full">
+            <nav className="border-gray-200 w-full">
                 <div className="mx-auto flex flex-wrap items-center justify-center px-4 py-7">
                     <div className='flex justify-between items-center w-full'>
 

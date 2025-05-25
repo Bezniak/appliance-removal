@@ -6,7 +6,7 @@ import {Button} from "flowbite-react";
 
 export const ContactInfoNavbar = () => {
     return (
-        <div className='hidden py-6 !px-12 md:px-8 lg:flex items-center justify-between border-b'>
+        <div className='hidden py-6 !px-12 md:px-8 lg:flex items-center justify-between border-b border-gray-200'>
             <div>
                 <Link to="/" className="flex items-center gap-3">
                     <img src="/logo.svg" alt="Логотип" width={52} height={52}/>
@@ -42,7 +42,8 @@ export const ContactInfoNavbar = () => {
             </div>
 
             <Button
-                className="!bg-lime-600 uppercase hover:bg-yellow-500 text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95">
+                className="!bg-lime-600 uppercase hover:bg-yellow-500 text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+            >
                 Подать заявку
             </Button>
         </div>

@@ -5,7 +5,7 @@ import {FaPhoneAlt} from "react-icons/fa";
 
 const Welcome = () => {
     return (
-        <section className="md:h-screen flex items-center bg-white py-20">
+        <section className="flex items-center bg-white py-20">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-16 px-4">
                 <div className="w-full md:w-1/2 flex justify-center">
                     <img
@@ -35,7 +35,7 @@ const Welcome = () => {
                     <div
                         className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-10 md:gap-16">
                         <Button
-                            className="!bg-yellow-500 hover:bg-lime-600 text-white text-lg md:text-xl tracking-widest font-bold uppercase px-9 py-8 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
+                            className="!bg-yellow-500 hover:bg-lime-600 text-white text-lg md:text-xl tracking-widest font-bold uppercase px-7 py-7 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                         >
                             <a href="#">Подробнее</a>
                         </Button>
