@@ -1,8 +1,8 @@
 import React from "react";
 import {Navigate, useParams} from "react-router-dom";
 import {services} from "../../store/data";
-import {Button, Card} from "flowbite-react";
 import {motion} from "framer-motion";
+import HowWeWork from "../HowWeWork/HowWeWork.jsx";
 
 export default function Service() {
     const {id} = useParams();
@@ -12,96 +12,144 @@ export default function Service() {
         return <Navigate to="/notfound" replace/>;
     }
 
-    const {
-        title,
-        icon,
-        img,
-        description,
-        content: {intro, whyChooseUs, howItWorks, equipmentHandled, ecoFriendlyNote, cta},
-    } = service;
+    const {title, img, content, description} = service;
+    const {intro, whyChooseUs, ecoFriendlyNote, cta} = content;
+
+    console.log('CTA title:', cta);
+
 
     return (
-
-        <div>
-
-            <div className="relative overflow-hidden w-screen h-screen flex items-center justify-center">
-                {/* Анимированное изображение */}
+        <div className="min-h-screen bg-white text-gray-800 font-sans leading-relaxed">
+            {/* Hero Section */}
+            <div className="relative h-screen md:h-[80vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
                 <motion.img
+                    key={id}
                     src={img}
-                    alt="здоровье молочных желез"
+                    alt={title}
                     className="absolute inset-0 w-full h-full object-cover"
-                    initial={{scale: 3}}
-                    animate={{scale: [1, 1.05, 1]}}
-                    transition={{duration: 9, repeat: Infinity, ease: "easeInOut"}}
-                />
-                <div className="absolute inset-0 bg-black/40"></div>
-
-                {/* Анимированный заголовок */}
-                <motion.h1
-                    key={id} // добавляем key, чтобы элемент "размонтировался" и "смонтировался" заново при смене id
-                    className="relative text-white text-3xl md:text-6xl text-center w-[75%] mx-auto"
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
+                    initial={{scale: 1.5}}
+                    animate={{scale: 1}}
                     transition={{duration: 2}}
-                >
-                    {title.split("").map((char, index) => (
-                        <motion.span
-                            key={index}
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{duration: 0.6, delay: index * 0.05}}
-                        >
-                            {char}
-                        </motion.span>
-                    ))}
-                </motion.h1>
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"/>
 
-            </div>
-
-
-            <div className="bg-gray-50 min-h-screen py-12 px-4 md:px-10 lg:px-24">
-                {/* Content Sections */}
-                <div className="space-y-10 text-gray-800">
-                    <section>
-                        <h2 className="text-2xl font-semibold mb-2">Что мы предлагаем</h2>
-                        <p>{intro}</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-semibold mb-2">Почему выбирают нас</h2>
-                        <p>{whyChooseUs}</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-semibold mb-2">Как это работает</h2>
-                        <ul className="list-disc pl-6 space-y-1">
-                            {howItWorks.split("\n").map((step, index) => (
-                                <li key={index}>{step.trim()}</li>
-                            ))}
-                        </ul>
-                    </section>
-
-                    {equipmentHandled && (
-                        <section>
-                            <h2 className="text-2xl font-semibold mb-2">Мы вывозим</h2>
-                            <p>{equipmentHandled}</p>
-                        </section>
-                    )}
-
-                    <section>
-                        <h2 className="text-2xl font-semibold mb-2">Забота об экологии</h2>
-                        <p>{ecoFriendlyNote}</p>
-                    </section>
-
-                    {/* CTA Section */}
-                    <Card className="bg-white shadow-lg mt-10 p-6 text-center">
-                        <h3 className="text-xl font-bold mb-4">{cta}</h3>
-                        <Button href="/#form" color="success">
-                            Заказать вывоз
-                        </Button>
-                    </Card>
+                <div className="absolute inset-0 w-full flex flex-col items-center justify-center px-4">
+                    {/* Заголовок */}
+                    <motion.h1
+                        key={id}
+                        className="z-10 text-white text-4xl md:text-5xl mb-10 text-center px-6 tracking-tight drop-shadow-lg"
+                        initial={{opacity: 0, y: -50}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 1.2}}
+                    >
+                        {title.split("").map((char, index) => (
+                            <motion.span
+                                key={`title-${index}`}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                transition={{delay: index * 0.03}}
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
+                    <motion.p
+                        key={`${id}-desc`}
+                        className="z-10 mt-4 text-white text-lg md:text-xl text-center max-w-3xl px-6"
+                        initial={{opacity: 0, y: -50}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 1.2, delay: title.length * 0.03 + 0.2}}
+                    >
+                        {description.split("").map((char, index) => (
+                            <motion.span
+                                key={`desc-${index}`}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                transition={{delay: index * 0.02}}
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                    </motion.p>
                 </div>
             </div>
+
+
+            <section className="bg-gradient-to-b from-gray-500 via-gray-700 to-gray-900 py-28 px-4 sm:px-10">
+                <div className="max-w-6xl mx-auto space-y-32">
+
+                    {/* Блок 1 — текст слева */}
+                    <motion.div
+                        initial={{opacity: 0, y: 40}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8}}
+                        viewport={{once: true}}
+                        className="flex flex-col md:flex-row items-center gap-16"
+                    >
+                        <div className="md:w-1/2 text-left">
+                            <h2 className="text-3xl text-white mb-6 leading-tight">
+                                Освободите место — легко и без стресса
+                            </h2>
+                            <p className="text-lg text-gray-300 leading-relaxed">{intro}</p>
+                        </div>
+                        <div className="md:w-1/2">
+                            <img
+                                src="/moving.png"
+                                alt="Организация пространства"
+                                className="w-full h-44 object-contain"
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* Блок 2 — текст справа */}
+                    <motion.div
+                        initial={{opacity: 0, y: 40}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8}}
+                        viewport={{once: true}}
+                        className="flex flex-col md:flex-row-reverse items-center gap-16"
+                    >
+                        <div className="md:w-1/2 text-right">
+                            <h2 className="text-3xl text-white mb-6 leading-tight">
+                                Почему выбирают нас
+                            </h2>
+                            <p className="text-lg text-gray-300 leading-relaxed">{whyChooseUs}</p>
+                        </div>
+                        <div className="md:w-1/2">
+                            <img
+                                src="/guaranteed.png"
+                                alt="Довольный клиент"
+                                className="w-full h-44 object-contain"
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* Блок 3 — текст слева */}
+                    <motion.div
+                        initial={{opacity: 0, y: 40}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8}}
+                        viewport={{once: true}}
+                        className="flex flex-col md:flex-row items-center gap-16"
+                    >
+                        <div className="md:w-1/2 text-left">
+                            <h2 className="text-3xl text-white mb-6 leading-tight">
+                                Экологический подход
+                            </h2>
+                            <p className="text-lg text-gray-300 leading-relaxed">{ecoFriendlyNote}</p>
+                        </div>
+                        <div className="md:w-1/2">
+                            <img
+                                src="/eco-friendly.png"
+                                alt="Экология"
+                                className="w-full h-44 object-contain"
+                            />
+                        </div>
+                    </motion.div>
+
+                </div>
+            </section>
+            <HowWeWork key={id} title={cta}/>
         </div>
     );
 }

@@ -4,9 +4,9 @@ import {Navbar} from "./components/Navbar/Navbar.jsx";
 import {FooterComponent} from "./components/Footer/Footer.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Home from "./pages/Home.jsx";
-import {About} from "./components/About/About.jsx";
 import {Contacts} from "./components/Contacts/Contacts.jsx";
 import Service from "./components/Services/Services.jsx";
+import About from "./components/About/About.jsx";
 
 
 const Layout = () => {

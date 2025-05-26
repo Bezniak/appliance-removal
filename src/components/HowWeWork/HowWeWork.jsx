@@ -1,16 +1,19 @@
-import { Button } from 'flowbite-react';
-import { HiPhone } from 'react-icons/hi';
+import {Button} from 'flowbite-react';
+import {HiPhone} from 'react-icons/hi';
 
 const steps = [
-    { emoji: '📞', text: 'Свяжитесь с нами любым удобным способом — звонок, мессенджер или онлайн-заявка' },
-    { emoji: '📅', text: 'Согласуем удобное время и уточним детали выезда' },
-    { emoji: '🚚', text: 'Профессиональная команда приедет точно в назначенное время' },
-    { emoji: '📦', text: 'Аккуратно и безопасно погрузим всю технику' },
-    { emoji: '♻️', text: 'Организуем экологичную утилизацию или переработку техники' },
-    { emoji: '🎁', text: 'Услуга полностью бесплатна — никаких скрытых платежей' },
+    {emoji: '📞', text: 'Свяжитесь с нами любым удобным способом — звонок, мессенджер или онлайн-заявка'},
+    {emoji: '📅', text: 'Согласуем удобное время и уточним детали выезда'},
+    {emoji: '🚚', text: 'Профессиональная команда приедет точно в назначенное время'},
+    {emoji: '📦', text: 'Аккуратно и безопасно погрузим всю технику'},
+    {emoji: '♻️', text: 'Организуем экологичную утилизацию или переработку техники'},
+    {emoji: '🎁', text: 'Услуга полностью бесплатна — никаких скрытых платежей'},
 ];
 
-export default function HowWeWork() {
+export default function HowWeWork({title}) {
+
+    console.log("title from HowWeWork", title)
+
     return (
         <section className="bg-white px-0 md:py-20">
             <div className="md:container md:mx-auto grid md:grid-cols-2 gap-0 md:gap-16 items-center">
@@ -21,16 +24,22 @@ export default function HowWeWork() {
                     <div className="absolute inset-0 bg-black/40"></div>
 
                     <div className="relative z-50 px-6 py-10 space-y-10 text-white">
-                        <h2 className="text-3xl sm:text-4xl leading-tight">
-                            Бесплатный вывоз <span className="text-yellow-400">любых видов техники</span> в Минске
-                        </h2>
-                        <div className="w-1/2 h-1 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full shadow-md"></div>
+                        {title ? (
+                            <h2 className="text-3xl sm:text-4xl leading-tight">{title}</h2>
+                        ) : (
+                            <h2 className="text-3xl sm:text-4xl leading-tight">
+                                Бесплатный вывоз <span className="text-yellow-400">любых видов техники</span> в Минске
+                            </h2>
+                        )}
+                        <div
+                            className="w-1/2 h-1 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full shadow-md"></div>
                         <p className="text-lg max-w-lg tracking-wide">
-                            Мы оперативно и бесплатно вывозим всю бытовую и офисную технику — от старых компьютеров и принтеров до крупногабаритной электроники.
+                            Мы оперативно и бесплатно вывозим всю бытовую и офисную технику — от старых компьютеров и
+                            принтеров до крупногабаритной электроники.
                         </p>
 
                         <ul className="grid grid-cols-1 gap-y-6">
-                            {steps.map(({ emoji, text }, index) => (
+                            {steps.map(({emoji, text}, index) => (
                                 <li key={index} className="flex items-start gap-4">
                                     <div
                                         className="flex items-center justify-center p-3 rounded-full text-white text-2xl bg-white"
@@ -51,8 +60,9 @@ export default function HowWeWork() {
                             >
                                 Оставить заявку
                             </Button>
-                            <a className="flex items-center text-yellow-400 hover:text-lime-300 transition text-xl font-semibold select-none" href="tel:+375333669979">
-                                <HiPhone className="mr-4 text-3xl" />
+                            <a className="flex items-center text-yellow-400 hover:text-lime-300 transition text-xl font-semibold select-none"
+                               href="tel:+375333669979">
+                                <HiPhone className="mr-4 text-3xl"/>
                                 +375 29 762 18 47
                             </a>
                         </div>
@@ -62,17 +72,23 @@ export default function HowWeWork() {
                 {/* Desktop version */}
                 <div className="hidden md:flex flex-col justify-center space-y-10 px-6">
                     <div>
-                        <h2 className="text-4xl sm:text-5xl text-gray-900 leading-tight">
-                            Бесплатный вывоз <span className="text-yellow-500">любых видов техники</span> в Минске
-                        </h2>
-                        <div className="mt-4 mb-10 w-1/2 h-1 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full shadow-md"></div>
+                        {title ? (
+                            <h2 className="text-4xl md:text-3xl text-gray-900 leading-tight">{title}</h2>
+                        ) : (
+                            <h2 className="text-4xl sm:text-5xl text-gray-900 leading-tight">
+                                Бесплатный вывоз <span className="text-yellow-500">любых видов техники</span> в Минске
+                            </h2>
+                        )}
+                        <div
+                            className="mt-4 mb-10 w-1/2 h-1 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full shadow-md"></div>
                         <p className="text-lg text-gray-600 max-w-lg tracking-wide">
-                            Мы оперативно и бесплатно вывозим всю бытовую и офисную технику — от старых компьютеров и принтеров до крупногабаритной электроники. Надежно, быстро и с заботой об окружающей среде.
+                            Мы оперативно и бесплатно вывозим всю бытовую и офисную технику — от старых компьютеров и
+                            принтеров до крупногабаритной электроники. Надежно, быстро и с заботой об окружающей среде.
                         </p>
                     </div>
 
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12">
-                        {steps.map(({ emoji, text }, index) => (
+                        {steps.map(({emoji, text}, index) => (
                             <li
                                 key={index}
                                 className="flex items-start gap-6 group cursor-default"
@@ -98,8 +114,9 @@ export default function HowWeWork() {
                         >
                             Оставить заявку
                         </Button>
-                        <a className="flex items-center text-yellow-500 hover:text-lime-600 transition text-xl font-semibold select-none" href="tel:+375333669979">
-                            <HiPhone className="mr-4 text-3xl" />
+                        <a className="flex items-center text-yellow-500 hover:text-lime-600 transition text-xl font-semibold select-none"
+                           href="tel:+375333669979">
+                            <HiPhone className="mr-4 text-3xl"/>
                             +375 29 762 18 47
                         </a>
                     </div>
