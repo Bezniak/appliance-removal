@@ -4,7 +4,7 @@ export const AnyQuestions = () => {
     return (
         <div
             className="relative h-screen bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: "url('/anyQuestionsBg.jpg')" }}
+            style={{ backgroundImage: "url('/howWeWork.jpeg')" }}
         >
             {/* Градиентный overlay поверх изображения */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60 z-0" />

@@ -8,7 +8,8 @@ import {Button} from "flowbite-react";
 
 const slides = [
     {
-        image: "/slider_3.jpg",
+        image: "/slider_1_1.jpeg",
+        imageMobile: "/slider_1_1_mobile.png",
         title1: "Бесплатный вывоз",
         title2: "Любой бытовой техники в Минске",
         description:
@@ -17,7 +18,7 @@ const slides = [
         buttonLink: "#order",
     },
     {
-        image: "/slider_1.jpg",
+        image: "/slider_2_2.jpeg",
         title1: "Лучший сервис в Минске",
         title2: "Гарантируем удобство и скорость",
         description:
@@ -26,7 +27,7 @@ const slides = [
         buttonLink: "#form",
     },
     {
-        image: "/slider_2.jpg",
+        image: "/slider_1.jpg",
         title1: "Индивидуальный подход",
         title2: "С заботой о будущем Минска",
         description:
