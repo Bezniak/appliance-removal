@@ -7,6 +7,7 @@ import Home from "./pages/Home.jsx";
 import {Contacts} from "./components/Contacts/Contacts.jsx";
 import Service from "./components/Services/Services.jsx";
 import About from "./components/About/About.jsx";
+import {Conditions} from "./components/Conditions/Conditions.jsx";
 
 
 const Layout = () => {
@@ -48,6 +49,10 @@ const App = () => {
                 {
                     path: ROUTES.SERVICES,
                     element: <Service/>
+                },
+                {
+                    path: ROUTES.CONDITIONS,
+                    element: <Conditions/>
                 },
             ]
         },
