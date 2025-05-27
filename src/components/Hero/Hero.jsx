@@ -1,3 +1,7 @@
+import {handleClick} from "../../common/helpers.js";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "../../config/routes.js";
+
 const Hero = () => {
     return (
         <section
@@ -35,17 +39,15 @@ const Hero = () => {
                     </p>
 
                     {/* Кнопка выходит за рамку вниз */}
-                    <button
+                    <NavLink
+                        to={ROUTES.BOOKING}
                         className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[var(--oringe)] hover:bg-lime-600 uppercase tracking-widest text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                         type="button"
                         aria-label="Заказать вывоз старой техники"
-                        onClick={() => {
-                            // Добавь логику, например, открытие формы или переход
-                            alert("Спасибо за заказ! Мы скоро с вами свяжемся.");
-                        }}
+                        onClick={handleClick}
                     >
                         Заказать вывоз
-                    </button>
+                    </NavLink>
                 </div>
             </div>
         </section>

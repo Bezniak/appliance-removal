@@ -1,20 +1,45 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
+import dayjs from 'dayjs';
 
 const ContactForm = () => {
     const {
         register,
         handleSubmit,
-        formState: {errors, isSubmitting, isSubmitSuccessful},
+        formState: {errors, isSubmitting},
         reset,
     } = useForm();
 
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(null);
 
-    const onSubmit = (data) => {
-        console.log('Форма отправлена:', data);
-        setSubmitted(true);
-        reset();
+    const onSubmit = async (data) => {
+        setError(null);
+        const timestamp = dayjs().format("DD.MM.YYYY HH:mm");
+        const message = `📩 Форма обратной связи с сайта\n
+👤 Имя: ${data.name}
+📞 Телефон: ${data.phone}
+📝 Тема: ${data.subject}
+💬 Сообщение: ${data.message}
+🕒 Дата и время отправки: ${timestamp}`;
+
+        try {
+            const response = await fetch(`https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({chat_id: import.meta.env.VITE_TELEGRAM_CHAT_ID, text: message}),
+            });
+
+            if (!response.ok) {
+                throw new Error('Ошибка при отправке сообщения в Telegram');
+            }
+
+            setSubmitted(true);
+            reset();
+        } catch (err) {
+            setError('Не удалось отправить сообщение. Попробуйте позже.');
+            console.error(err);
+        }
     };
 
     return (
@@ -23,13 +48,13 @@ const ContactForm = () => {
                 className="bg-gray-50 px-4"
                 aria-label="Форма обратной связи для бесплатного вывоза техники"
             >
-                <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl">
+                <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-6 md:p-10">
                     <h1 className="text-4xl text-center md:text-left mb-10">
                         Форма обратной связи
                     </h1>
 
                     {submitted ? (
-                        <p className="text-green-600 text-center text-lg font-medium">
+                        <p className="text-[var(--oringe)] text-center text-2xl font-medium">
                             Ваше сообщение успешно отправлено!
                         </p>
                     ) : (
@@ -38,15 +63,21 @@ const ContactForm = () => {
                                 <input
                                     type="text"
                                     placeholder="Имя*"
-                                    className={`w-full p-3 border-2 outline-none ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg`}
+                                    className={`w-full p-3 border-2 outline-none rounded-lg ${
+                                        errors.name ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                     {...register('name', {required: 'Укажите полное имя'})}
                                 />
-                                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+                                {errors.name && (
+                                    <p className="text-red-500 text-sm">{errors.name.message}</p>
+                                )}
 
                                 <input
                                     type="email"
                                     placeholder="Электронная почта*"
-                                    className={`w-full p-3 border-2 outline-none ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg`}
+                                    className={`w-full p-3 border-2 outline-none rounded-lg ${
+                                        errors.email ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                     {...register('email', {
                                         required: 'Укажите электронную почту',
                                         pattern: {
@@ -55,12 +86,16 @@ const ContactForm = () => {
                                         },
                                     })}
                                 />
-                                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                                {errors.email && (
+                                    <p className="text-red-500 text-sm">{errors.email.message}</p>
+                                )}
 
                                 <input
                                     type="tel"
                                     placeholder="Номер телефона*"
-                                    className={`w-full p-3 border-2 outline-none ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-lg`}
+                                    className={`w-full p-3 border-2 outline-none rounded-lg ${
+                                        errors.phone ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                     {...register('phone', {
                                         required: 'Укажите номер телефона',
                                         pattern: {
@@ -69,23 +104,37 @@ const ContactForm = () => {
                                         },
                                     })}
                                 />
-                                {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+                                {errors.phone && (
+                                    <p className="text-red-500 text-sm">{errors.phone.message}</p>
+                                )}
 
                                 <input
                                     type="text"
                                     placeholder="Тема обращения*"
-                                    className={`w-full p-3 border-2 outline-none ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-lg`}
+                                    className={`w-full p-3 border-2 outline-none rounded-lg ${
+                                        errors.subject ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                     {...register('subject', {required: 'Укажите тему сообщения'})}
                                 />
-                                {errors.subject && <p className="text-red-500 text-sm">{errors.subject.message}</p>}
+                                {errors.subject && (
+                                    <p className="text-red-500 text-sm">{errors.subject.message}</p>
+                                )}
 
                                 <textarea
                                     placeholder="Ваше сообщение*"
                                     rows="4"
-                                    className={`w-full p-3 border-2 outline-none ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg resize-none`}
+                                    className={`w-full p-3 border-2 outline-none rounded-lg resize-none ${
+                                        errors.message ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                     {...register('message', {required: 'Введите сообщение'})}
                                 />
-                                {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+                                {errors.message && (
+                                    <p className="text-red-500 text-sm">{errors.message.message}</p>
+                                )}
+
+                                {error && (
+                                    <p className="text-red-500 text-center text-sm">{error}</p>
+                                )}
 
                                 <button
                                     type="submit"

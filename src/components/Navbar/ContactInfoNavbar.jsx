@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaLocationPin, FaPhone } from 'react-icons/fa6';
-import { TbClockHour9Filled } from 'react-icons/tb';
-import { Button } from 'flowbite-react';
+import {Link, NavLink} from 'react-router-dom';
+import {ROUTES} from "../../config/routes.js";
 
 export const ContactInfoNavbar = () => {
     return (
@@ -13,7 +11,7 @@ export const ContactInfoNavbar = () => {
             {/* Логотип и бренд */}
             <div>
                 <Link to="/" className="flex items-center gap-3" aria-label="Главная страница — Вывоз техники">
-                    <img src="/logo.svg" alt="Логотип компании Вывоз техники" width={52} height={52} />
+                    <img src="/logo.svg" alt="Логотип компании Вывоз техники" width={52} height={52}/>
                     <div className="flex flex-col items-center justify-center">
                         <span className="uppercase font-black text-lime-600 leading-none select-none">Вывоз</span>
                         <span className="uppercase font-black text-lime-600 leading-none select-none">техники</span>
@@ -22,13 +20,9 @@ export const ContactInfoNavbar = () => {
             </div>
 
             {/* Контактная информация */}
-            <ul className="flex items-center justify-center gap-16 w-1/2" role="list" aria-label="Контактная информация">
-                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Телефон для звонков">
-                    <FaPhone
-                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
-                        aria-hidden="true"
-                        focusable="false"
-                    />
+            <ul className="flex items-center justify-center gap-16 w-1/2" role="list"
+                aria-label="Контактная информация">
+                <li className="flex flex-col items-center gap-2 text-gray-700" aria-label="Телефон для звонков">
                     <span>Позвоните нам</span>
                     <a
                         href="tel:+375333669979"
@@ -38,38 +32,25 @@ export const ContactInfoNavbar = () => {
                         +375 29 762 18 47
                     </a>
                 </li>
-                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Территория обслуживания">
-                    <FaLocationPin
-                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
-                        aria-hidden="true"
-                        focusable="false"
-                    />
+                <li className="flex flex-col items-center gap-2 text-gray-700" aria-label="Территория обслуживания">
                     <span>Территория обслуживания</span>
                     <span className="text-lg font-bold text-lime-600">г. Минск</span>
                 </li>
-                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Часы работы">
-                    <TbClockHour9Filled
-                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
-                        aria-hidden="true"
-                        focusable="false"
-                    />
+                <li className="flex flex-col items-center gap-2 text-gray-700" aria-label="Часы работы">
                     <span>Часы работы</span>
                     <span className="text-lg font-bold text-lime-600">09:00 - 19:00</span>
                 </li>
             </ul>
 
             {/* Кнопка заявки */}
-            <Button
-                className="!bg-lime-600 uppercase !hover:bg-[var(--oringe)] text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+            <NavLink
+                to={ROUTES.BOOKING}
+                className="!bg-lime-600 uppercase !hover:bg-[var(--oringe)] text-white font-semibold px-5 py-3 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
                 aria-label="Подать заявку на вывоз техники"
                 type="button"
-                onClick={() => {
-                    // Здесь можно добавить логику открытия формы или модального окна
-                    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-                }}
             >
                 Подать заявку
-            </Button>
+            </NavLink>
         </nav>
     );
 };

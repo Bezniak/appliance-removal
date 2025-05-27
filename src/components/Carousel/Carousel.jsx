@@ -1,15 +1,16 @@
 'use client';
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay } from "swiper/modules";
-import { Button } from "flowbite-react";
+import {Autoplay} from "swiper/modules";
 import {slides} from "../../store/data.js";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "../../config/routes.js";
+import {handleClick} from "../../common/helpers.js";
 
 
-
-function SlideTextBlock({ slide, align = "right" }) {
+function SlideTextBlock({slide, align = "right"}) {
     const textPositionClass =
         align === "right"
             ? "right-5 pl-5 md:right-20 text-right items-end"
@@ -23,11 +24,13 @@ function SlideTextBlock({ slide, align = "right" }) {
             <h1 className="text-3xl md:text-6xl font-light">{slide.title1}</h1>
             <h2 className="text-4xl md:text-7xl font-semibold">{slide.title2}</h2>
             <p className="text-md md:text-xl font-light">{slide.description}</p>
-            <Button
-                className="mt-12 !bg-[var(--oringe)] hover:bg-lime-600 text-white text-lg font-bold uppercase px-12 py-8 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+            <NavLink
+                to={ROUTES.BOOKING}
+                onClick={handleClick}
+                className="mt-12 !bg-[var(--oringe)] hover:bg-lime-600 text-white text-lg font-bold uppercase px-10 py-4 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
             >
-                <a href={slide.buttonLink}>{slide.buttonText}</a>
-            </Button>
+                {slide.buttonText}
+            </NavLink>
         </div>
     );
 }
@@ -38,7 +41,7 @@ export function Carousel() {
             spaceBetween={0}
             centeredSlides={true}
             loop={true}
-            autoplay={{ delay: 6000, disableOnInteraction: false }}
+            autoplay={{delay: 6000, disableOnInteraction: false}}
             speed={3500}
             modules={[Autoplay]}
             className="w-full h-screen relative"
@@ -55,8 +58,8 @@ export function Carousel() {
                             className="w-full h-full object-cover"
                             loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-                        <SlideTextBlock slide={slide} align={isRightAligned ? "right" : "left"} />
+                        <div className="absolute inset-0 bg-black/50" aria-hidden="true"/>
+                        <SlideTextBlock slide={slide} align={isRightAligned ? "right" : "left"}/>
                     </SwiperSlide>
                 );
             })}

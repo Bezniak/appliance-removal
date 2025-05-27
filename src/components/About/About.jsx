@@ -1,9 +1,11 @@
 import React from "react";
 import {motion} from "framer-motion";
-import {Leaf, PhoneCall, Recycle, ShieldCheck, Sparkles, Timer, Truck,} from "lucide-react";
-import {Button} from "flowbite-react";
+import {Leaf, Recycle, ShieldCheck, Sparkles, Timer, Truck,} from "lucide-react";
 import {FirstPageScreen} from "../FirstPageScreen/FirstPageScreen.jsx";
 import Seo from "../SEO/Seo.jsx";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "../../config/routes.js";
+import {handleClick} from "../../common/helpers.js";
 
 
 const techReasons = [
@@ -153,14 +155,15 @@ export default function About() {
                     aria-label="Призыв к действию"
                 >
                     <h2 className="text-3xl md:text-4xl text-white font-bold">Готовы освободить пространство?</h2>
-                    <p className="text-white text-lg">Заполните заявку — и мы приедем в удобное для вас время.</p>
-                    <Button
+                    <p className="text-white text-lg mb-16">Заполните заявку — и мы приедем в удобное для вас время.</p>
+                    <NavLink
+                        to={ROUTES.BOOKING}
+                        onClick={handleClick}
                         size="lg"
-                        className="bg-[var(--oringe)] hover:bg-lime-600 transition mx-auto text-white px-6 py-3 rounded-xl shadow-lg"
+                        className="bg-[var(--oringe)] hover:bg-lime-600 transition mx-auto text-white px-8 py-4 rounded-xl shadow-lg"
                     >
-                        <PhoneCall className="mr-2 w-5 h-5"/>
                         Оставить заявку
-                    </Button>
+                    </NavLink>
                 </motion.section>
             </main>
         </>

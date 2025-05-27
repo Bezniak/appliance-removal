@@ -9,6 +9,7 @@ import Service from "./components/Services/Services.jsx";
 import About from "./components/About/About.jsx";
 import {Conditions} from "./components/Conditions/Conditions.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import BookingForm from "./components/BookingForm/BookingForm.jsx";
 
 
 const Layout = () => {
@@ -58,6 +59,10 @@ const App = () => {
                 {
                     path: ROUTES.PP,
                     element: <PrivacyPolicy/>
+                },
+                {
+                    path: ROUTES.BOOKING,
+                    element: <BookingForm/>
                 },
             ]
         },

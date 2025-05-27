@@ -6,8 +6,21 @@ import {BsInstagram, BsTelegram} from "react-icons/bs";
 import {FaViber} from "react-icons/fa";
 import {FirstPageScreen} from "../FirstPageScreen/FirstPageScreen.jsx";
 import Seo from "../SEO/Seo.jsx";
+import { motion } from "framer-motion";
 
 export const Contacts = () => {
+    const fadeSlideUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.42, 0, 0.58, 1], // плавный ease-in-out
+            },
+        },
+    };
+
     return (
         <>
             <Seo
@@ -36,7 +49,13 @@ export const Contacts = () => {
                     aria-labelledby="contact-info-heading"
                 >
                     {/* Левая часть — контактная информация */}
-                    <article className="space-y-8">
+                    <motion.article
+                        className="space-y-8"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={fadeSlideUp}
+                    >
                         <h2 id="contact-info-heading" className="text-4xl text-center md:text-left">
                             Контактная информация
                         </h2>
@@ -112,12 +131,18 @@ export const Contacts = () => {
                                 </a>
                             </nav>
                         </address>
-                    </article>
+                    </motion.article>
 
                     {/* Форма контакта */}
-                    <section aria-label="Форма обратной связи">
+                    <motion.section
+                        aria-label="Форма обратной связи"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={fadeSlideUp}
+                    >
                         <ContactForm/>
-                    </section>
+                    </motion.section>
                 </section>
 
                 {/* Карта */}
