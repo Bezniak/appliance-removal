@@ -1,51 +1,75 @@
-import React from 'react'
-import {Link} from "react-router-dom";
-import {FaLocationPin, FaPhone} from "react-icons/fa6";
-import {TbClockHour9Filled} from "react-icons/tb";
-import {Button} from "flowbite-react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaLocationPin, FaPhone } from 'react-icons/fa6';
+import { TbClockHour9Filled } from 'react-icons/tb';
+import { Button } from 'flowbite-react';
 
 export const ContactInfoNavbar = () => {
     return (
-        <div className='hidden py-6 !px-12 md:px-8 lg:flex items-center justify-between border-b border-gray-200'>
+        <nav
+            className="hidden py-6 !px-12 md:px-8 lg:flex items-center justify-between border-b border-gray-200"
+            aria-label="Контактная информация и навигация"
+        >
+            {/* Логотип и бренд */}
             <div>
-                <Link to="/" className="flex items-center gap-3">
-                    <img src="/logo.svg" alt="Логотип" width={52} height={52}/>
-                    <div className='flex flex-col items-center justify-center'>
-                        <div className='uppercase font-black text-lime-600'>Вывоз</div>
-                        <div className='uppercase font-black text-lime-600'>техники</div>
+                <Link to="/" className="flex items-center gap-3" aria-label="Главная страница — Вывоз техники">
+                    <img src="/logo.svg" alt="Логотип компании Вывоз техники" width={52} height={52} />
+                    <div className="flex flex-col items-center justify-center">
+                        <span className="uppercase font-black text-lime-600 leading-none select-none">Вывоз</span>
+                        <span className="uppercase font-black text-lime-600 leading-none select-none">техники</span>
                     </div>
                 </Link>
             </div>
 
-            <div className='flex items-center justify-center gap-16 w-1/2'>
-                <div className='relative flex flex-col items-center gap-2 text-gray-700'>
-                    <FaPhone className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
-                    Позвоните нам
+            {/* Контактная информация */}
+            <ul className="flex items-center justify-center gap-16 w-1/2" role="list" aria-label="Контактная информация">
+                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Телефон для звонков">
+                    <FaPhone
+                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
+                        aria-hidden="true"
+                        focusable="false"
+                    />
+                    <span>Позвоните нам</span>
                     <a
                         href="tel:+375333669979"
-                        className="text-lg font-bold text-lime-600 hover:text-yellow-500 transition z-50"
+                        className="text-lg font-bold text-lime-600 hover:text-[var(--oringe)] transition z-50"
+                        aria-label="Позвонить по номеру +375 29 762 18 47"
                     >
                         +375 29 762 18 47
                     </a>
-                </div>
-                <div className="relative flex flex-col items-center gap-2 text-gray-700">
-                    <FaLocationPin className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
-                    <p>Территория обслуживания</p>
-                    <p className="text-lg font-bold text-lime-600">г. Минск</p>
-                </div>
+                </li>
+                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Территория обслуживания">
+                    <FaLocationPin
+                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
+                        aria-hidden="true"
+                        focusable="false"
+                    />
+                    <span>Территория обслуживания</span>
+                    <span className="text-lg font-bold text-lime-600">г. Минск</span>
+                </li>
+                <li className="relative flex flex-col items-center gap-2 text-gray-700" aria-label="Часы работы">
+                    <TbClockHour9Filled
+                        className="absolute inset-0 h-full w-full text-lime-600 opacity-10"
+                        aria-hidden="true"
+                        focusable="false"
+                    />
+                    <span>Часы работы</span>
+                    <span className="text-lg font-bold text-lime-600">09:00 - 19:00</span>
+                </li>
+            </ul>
 
-                <div className='relative flex flex-col items-center gap-2 text-gray-700'>
-                    <TbClockHour9Filled className="absolute inset-0 h-full w-full text-lime-600 opacity-10"/>
-                    <p>Часы работы</p>
-                    <p className="text-lg font-bold text-lime-600">09:00 - 19:00</p>
-                </div>
-            </div>
-
+            {/* Кнопка заявки */}
             <Button
-                className="!bg-lime-600 uppercase hover:bg-yellow-500 text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+                className="!bg-lime-600 uppercase !hover:bg-[var(--oringe)] text-white font-semibold px-6 !py-7 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+                aria-label="Подать заявку на вывоз техники"
+                type="button"
+                onClick={() => {
+                    // Здесь можно добавить логику открытия формы или модального окна
+                    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+                }}
             >
                 Подать заявку
             </Button>
-        </div>
-    )
-}
+        </nav>
+    );
+};

@@ -1,5 +1,7 @@
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import {CheckCircle} from 'lucide-react';
+import {FirstPageScreen} from "../FirstPageScreen/FirstPageScreen.jsx";
+import Seo from "../SEO/Seo.jsx";
 
 export const Conditions = () => {
     const conditions = [
@@ -14,43 +16,62 @@ export const Conditions = () => {
     ];
 
     return (
-        <main className="min-h-screen bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
-            <div className="max-w-6xl mx-auto">
-                {/* Заголовок */}
-                <header className="mb-12 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                        Условия бесплатного вывоза техники
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-600">
-                        Узнайте, как мы работаем и почему сотрудничество с нами — это удобно, быстро и без затрат.
-                    </p>
-                </header>
+        <div>
+            <Seo
+                title="Условия бесплатного вывоза техники в Минске"
+                description="Узнайте условия бесплатного вывоза старой и ненужной техники в Минске. Работаем быстро, аккуратно и без лишних хлопот. Обслуживаем все районы города."
+                keywords={[
+                    "бесплатный вывоз техники",
+                    "утилизация техники Минск",
+                    "вывоз холодильника Минск",
+                    "вывоз стиральной машины",
+                    "бесплатный вывоз крупной бытовой техники"
+                ]}
+            />
 
-                {/* Список условий */}
-                <section>
-                    <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-                        {conditions.map((condition, index) => (
-                            <li key={index} className="flex items-start bg-white shadow-sm p-5 rounded-2xl border border-gray-100">
-                                <CheckCircle className="text-yellow-500 mt-1 mr-4 w-6 h-6 flex-shrink-0" />
-                                <p className="text-gray-700 text-base md:text-lg leading-relaxed">{condition}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
+            <FirstPageScreen
+                title="Условия бесплатного вывоза техники в Минске"
+                description="Узнайте, как быстро и удобно избавиться от ненужной бытовой техники с нашей бесплатной услугой вывоза."
+                img="/conditions.png"
+            />
 
-                {/* Призыв к действию */}
-                <div className="mt-16 text-center">
-                    <p className="text-xl text-gray-800 mb-6">
-                        Готовы освободить место и избавиться от старой техники?
-                    </p>
-                    <a
-                        href="/#contact"
-                        className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-xl transition duration-300"
-                    >
-                        Оставить заявку
-                    </a>
+            <main className="min-h-screen bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
+                <div className="max-w-6xl mx-auto">
+                    <section id="conditions" aria-label="Условия бесплатного вывоза техники в Минске">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+                            Почему выбирают наш сервис вывоза техники
+                        </h2>
+                        <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+                            {conditions.map((condition, index) => (
+                                <li
+                                    key={index}
+                                    className="flex items-start bg-white shadow-sm p-5 rounded-2xl border border-gray-100"
+                                >
+                                    <CheckCircle className="text-[var(--oringe)] mt-1 mr-4 w-9 h-9 flex-shrink-0"/>
+                                    <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                                        <strong>{condition}</strong>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    <section id="contact-cta" className="mt-20 text-center">
+                        <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+                            Готовы освободить место от старой техники?
+                        </h3>
+                        <p className="text-lg text-gray-600 mb-6">
+                            Оформите заявку на бесплатный вывоз прямо сейчас.
+                        </p>
+                        <a
+                            href="/#contact"
+                            className="inline-block bg-[var(--oringe)] hover:bg-lime-600 tracking-widest uppercase text-white font-semibold py-3 px-8 rounded-xl transition duration-300"
+                        >
+                            Оставить заявку
+                        </a>
+                    </section>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     );
 };

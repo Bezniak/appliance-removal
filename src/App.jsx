@@ -8,6 +8,7 @@ import {Contacts} from "./components/Contacts/Contacts.jsx";
 import Service from "./components/Services/Services.jsx";
 import About from "./components/About/About.jsx";
 import {Conditions} from "./components/Conditions/Conditions.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 
 
 const Layout = () => {
@@ -53,6 +54,10 @@ const App = () => {
                 {
                     path: ROUTES.CONDITIONS,
                     element: <Conditions/>
+                },
+                {
+                    path: ROUTES.PP,
+                    element: <PrivacyPolicy/>
                 },
             ]
         },
