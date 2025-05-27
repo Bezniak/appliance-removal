@@ -12,17 +12,13 @@ const steps = [
 
 export default function HowWeWork({title}) {
 
-    console.log("title from HowWeWork", title)
-
     return (
         <section className="bg-white px-0 py-10 md:py-20">
             <div className="container mx-auto grid md:grid-cols-2 gap-0 md:gap-16 items-center">
-
-                {/* Desktop version */}
                 <div className="flex flex-col justify-center space-y-10 px-6">
                     <div>
                         {title ? (
-                            <h2 className="text-4xl md:text-3xl text-gray-900 leading-tight">{title}</h2>
+                            <h2 className="text-center md:text-left text-2xl md:text-3xl text-gray-900 leading-tight">{title}</h2>
                         ) : (
                             <h2 className="text-4xl sm:text-5xl text-gray-900 leading-tight">
                                 Бесплатный вывоз <span className="text-yellow-500">любых видов техники</span> в Минске
@@ -59,11 +55,11 @@ export default function HowWeWork({title}) {
                     <div className="flex flex-col md:flex-row items-center gap-8 pt-12">
                         <Button
                             color="blue"
-                            className="bg-yellow-500 hover:bg-lime-600 text-white text-lg md:text-xlg tracking-widest font-semibold uppercase px-5 py-7 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
+                            className="bg-yellow-500 hover:bg-lime-600 text-white text-base md:text-lg tracking-widest font-semibold uppercase px-5 py-7 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                         >
                             Оставить заявку
                         </Button>
-                        <a className="flex items-center text-yellow-500 hover:text-lime-600 transition text-xl font-semibold select-none"
+                        <a className="flex items-center text-yellow-500 hover:text-lime-600 transition text-base md:text-lg font-semibold select-none"
                            href="tel:+375333669979">
                             <HiPhone className="mr-4 text-3xl"/>
                             +375 29 762 18 47

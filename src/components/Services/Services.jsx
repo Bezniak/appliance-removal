@@ -15,8 +15,6 @@ export default function Service() {
     const {title, img, content, description} = service;
     const {intro, whyChooseUs, ecoFriendlyNote, cta} = content;
 
-    console.log('CTA title:', cta);
-
 
     return (
         <div className="min-h-screen bg-white text-gray-800 font-sans leading-relaxed">
@@ -75,8 +73,8 @@ export default function Service() {
             </div>
 
 
-            <section className="bg-gradient-to-b from-gray-500 via-gray-700 to-gray-900 py-28 px-4 sm:px-10">
-                <div className="max-w-6xl mx-auto space-y-32">
+            <section className="bg-gradient-to-b from-gray-500 via-gray-700 to-gray-900 py-10 md:py-20 px-5">
+                <div className="max-w-6xl mx-auto space-y-8 md:space-y-32">
 
                     {/* Блок 1 — текст слева */}
                     <motion.div
@@ -84,7 +82,7 @@ export default function Service() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="flex flex-col md:flex-row items-center gap-16"
+                        className="flex flex-col md:flex-row items-center gap-10 md:gap-16"
                     >
                         <div className="md:w-1/2 text-left">
                             <h2 className="text-3xl text-white mb-6 leading-tight">
@@ -96,7 +94,7 @@ export default function Service() {
                             <img
                                 src="/moving.png"
                                 alt="Организация пространства"
-                                className="w-full h-44 object-contain"
+                                className="w-full h-32 md:h-44 object-contain"
                             />
                         </div>
                     </motion.div>
@@ -107,7 +105,7 @@ export default function Service() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="flex flex-col md:flex-row-reverse items-center gap-16"
+                        className="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16"
                     >
                         <div className="md:w-1/2 text-right">
                             <h2 className="text-3xl text-white mb-6 leading-tight">
@@ -119,7 +117,7 @@ export default function Service() {
                             <img
                                 src="/guaranteed.png"
                                 alt="Довольный клиент"
-                                className="w-full h-44 object-contain"
+                                className="w-full h-32 md:h-44 object-contain"
                             />
                         </div>
                     </motion.div>
@@ -130,7 +128,7 @@ export default function Service() {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.8}}
                         viewport={{once: true}}
-                        className="flex flex-col md:flex-row items-center gap-16"
+                        className="flex flex-col md:flex-row items-center gap-10 md:gap-16"
                     >
                         <div className="md:w-1/2 text-left">
                             <h2 className="text-3xl text-white mb-6 leading-tight">
@@ -142,7 +140,7 @@ export default function Service() {
                             <img
                                 src="/eco-friendly.png"
                                 alt="Экология"
-                                className="w-full h-44 object-contain"
+                                className="w-full h-32 md:h-44 object-contain"
                             />
                         </div>
                     </motion.div>

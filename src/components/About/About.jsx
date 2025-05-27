@@ -98,7 +98,7 @@ export default function About() {
                     initial={{opacity: 0, scale: 0.95}}
                     whileInView={{opacity: 1, scale: 1}}
                     transition={{duration: 0.8}}
-                    className="relative h-screen bg-center bg-no-repeat bg-cover bg-fixed flex flex-col items-center justify-center"
+                    className="relative py-10 md:h-screen bg-center bg-no-repeat bg-cover bg-fixed flex flex-col items-center justify-center"
                     style={{backgroundImage: "url(/aboutUs_2.jpeg)"}}
                 >
                     {/* Затемнение слоя */}
