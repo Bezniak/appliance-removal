@@ -611,7 +611,7 @@ export const testimonials = [
         name: "Елена",
         role: "Клиент",
         review:
-            "Быстро вывезли старую технику, даже помогли вынести с пятого этажа. Спасибо!",
+            "Быстро вывезли старую технику с пятого этажа. Спасибо!",
         img: "https://randomuser.me/api/portraits/women/4.jpg",
         rating: 5,
     },

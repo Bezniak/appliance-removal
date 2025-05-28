@@ -44,12 +44,6 @@ const Welcome = () => {
                         alt="Вывоз бытовой техники в Минске — изображение"
                         className="max-w-full h-auto"
                         loading="lazy"
-                        animate={{ y: [0, -20, 0] }}
-                        transition={{
-                            duration: 2.5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
                     />
                 </div>
 

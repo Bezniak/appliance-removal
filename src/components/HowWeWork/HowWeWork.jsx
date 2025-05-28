@@ -1,45 +1,36 @@
-import React, { useRef } from "react";
-import { HiPhone } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
-import { ROUTES } from "../../config/routes.js";
-import { handleClick } from "../../common/helpers.js";
-import { motion, useInView } from "framer-motion";
+import React, {useRef} from "react";
+import {HiPhone} from "react-icons/hi";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "../../config/routes.js";
+import {handleClick} from "../../common/helpers.js";
+import {motion, useInView} from "framer-motion";
 
 const steps = [
-    { emoji: "📞", text: "Свяжитесь с нами любым удобным способом — звонок, мессенджер или онлайн-заявка" },
-    { emoji: "📅", text: "Согласуем удобное время и уточним детали выезда" },
-    { emoji: "🚚", text: "Профессиональная команда приедет точно в назначенное время" },
-    { emoji: "📦", text: "Аккуратно и безопасно погрузим всю технику" },
-    { emoji: "♻️", text: "Организуем экологичную утилизацию или переработку техники" },
-    { emoji: "🎁", text: "Услуга полностью бесплатна — никаких скрытых платежей" },
+    {emoji: "📞", text: "Свяжитесь с нами любым удобным способом — звонок, мессенджер или онлайн-заявка"},
+    {emoji: "📅", text: "Согласуем удобное время и уточним детали выезда"},
+    {emoji: "🚚", text: "Профессиональная команда приедет точно в назначенное время"},
+    {emoji: "📦", text: "Аккуратно и безопасно погрузим всю технику"},
+    {emoji: "♻️", text: "Организуем экологичную утилизацию или переработку техники"},
+    {emoji: "🎁", text: "Услуга полностью бесплатна — никаких скрытых платежей"},
 ];
 
 const textVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: {opacity: 0, y: 20},
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: "easeOut" },
-    },
-};
-
-const swingAnimation = {
-    rotate: [0, 1, -1, 1, 0],  // всего ±1 градус
-    transition: {
-        duration: 6,            // медленно, 6 секунд на полный цикл
-        ease: "easeInOut",
-        repeat: Infinity,
+        transition: {duration: 0.8, ease: "easeOut"},
     },
 };
 
 
-export default function HowWeWork({ title }) {
+export default function HowWeWork({title}) {
     // Создаем ref для блока текста
     const textRef = useRef(null);
 
     // Проверяем, виден ли блок текста (true/false)
     // Параметры: once: false - чтобы срабатывало каждый раз, как входит в зону видимости
-    const isInView = useInView(textRef, { once: false, margin: "-100px" });
+    const isInView = useInView(textRef, {once: false, margin: "-100px"});
 
     return (
         <section
@@ -49,7 +40,7 @@ export default function HowWeWork({ title }) {
         >
             <div className="container mx-auto grid md:grid-cols-2 gap-0 md:gap-16 items-center">
                 {/* Мобильная картинка с анимацией покачивания */}
-                <motion.div className="md:hidden flex justify-center" animate={swingAnimation}>
+                <motion.div className="md:hidden flex justify-center">
                     <img
                         src="/many.png"
                         alt="Вывоз техники в минске бесплатно"
@@ -97,7 +88,7 @@ export default function HowWeWork({ title }) {
                         className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12 list-decimal list-inside"
                         aria-label="Шаги нашей работы"
                     >
-                        {steps.map(({ emoji, text }, index) => (
+                        {steps.map(({emoji, text}, index) => (
                             <li
                                 key={index}
                                 className="flex items-start gap-6 group cursor-default"
@@ -129,14 +120,14 @@ export default function HowWeWork({ title }) {
                             href="tel:+375333669979"
                             aria-label="Позвонить по телефону +375 29 762 18 47"
                         >
-                            <HiPhone className="mr-4 text-3xl" aria-hidden="true" />
+                            <HiPhone className="mr-4 text-3xl" aria-hidden="true"/>
                             +375 29 762 18 47
                         </a>
                     </div>
                 </motion.div>
 
                 {/* Десктоп картинка с анимацией покачивания */}
-                <motion.div className="hidden md:flex justify-center" animate={swingAnimation}>
+                <motion.div className="hidden md:flex justify-center">
                     <img
                         src="/many.png"
                         alt="Рабочий указывает на информацию о вывозе техники"

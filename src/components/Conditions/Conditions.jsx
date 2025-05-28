@@ -40,21 +40,21 @@ export const Conditions = () => {
                 img="/condition_2.jpeg"
             />
 
-            <main className="min-h-screen bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
+            <main className="min-h-screen py-10 md:py-20">
                 <div className="max-w-6xl mx-auto">
                     <section id="conditions" aria-label="Условия бесплатного вывоза техники в Минске">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+                        <h2 className="text-4xl mb-10 text-center">
                             Почему выбирают наш сервис вывоза техники
                         </h2>
                         <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
                             {conditions.map((condition, index) => (
                                 <li
                                     key={index}
-                                    className="flex items-start bg-white shadow-sm p-5 rounded-2xl border border-gray-100"
+                                    className="flex items-center shadow-sm p-5 rounded-2xl border border-gray-200"
                                 >
                                     <CheckCircle className="text-[var(--oringe)] mt-1 mr-4 w-9 h-9 flex-shrink-0"/>
-                                    <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                                        <strong>{condition}</strong>
+                                    <p className="text-base md:text-lg leading-relaxed">
+                                        {condition}
                                     </p>
                                 </li>
                             ))}
@@ -65,17 +65,9 @@ export const Conditions = () => {
                         id="contact-cta"
                         className="mt-20 flex flex-col md:flex-row items-center justify-between gap-20 px-6 md:px-20"
                     >
-                        {/* Картинка с бесконечной анимацией */}
                         <motion.div
                             className="md:w-1/2"
-                            animate={{
-                                x: [0, 80, 0, -160, 0], // Вправо, влево и обратно
-                            }}
-                            transition={{
-                                duration: 6,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
+
                         >
                             <img
                                 src="/condition_img.jpeg"
@@ -86,7 +78,7 @@ export const Conditions = () => {
                         </motion.div>
 
                         {/* Текст и кнопка */}
-                        <div className="md:w-1/2 space-y-6">
+                        <div className="md:w-1/2 space-y-6 flex justify-center md:justify-start flex-col">
                             <h3 className="text-2xl text-center md:text-left md:text-3xl font-semibold text-gray-800">
                                 Готовы освободить место от старой техники?
                             </h3>
@@ -96,7 +88,7 @@ export const Conditions = () => {
                             <NavLink
                                 to={ROUTES.BOOKING}
                                 onClick={handleClick}
-                                className="inline-block bg-[var(--oringe)]  hover:bg-lime-600 tracking-widest uppercase text-white font-semibold py-4 px-8 rounded-xl transition duration-300"
+                                className="mx-auto md:mt-10 bg-[var(--oringe)]  hover:bg-lime-600 tracking-widest uppercase text-white font-semibold py-4 px-8 rounded-xl transition duration-300"
                             >
                                 Оставить заявку
                             </NavLink>

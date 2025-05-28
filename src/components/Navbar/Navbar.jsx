@@ -44,7 +44,7 @@ export const Navbar = () => {
         <header>
             <ContactInfoNavbar/>
             <nav aria-label="Основное меню" className="border-gray-200 w-full">
-                <div className="mx-auto flex flex-wrap items-center justify-center py-7">
+                <div className="mx-auto flex flex-wrap items-center justify-center px-3 py-7">
                     <div className="flex justify-between items-center w-full">
 
                         {/* Логотип (ссылка на главную) */}
@@ -97,9 +97,9 @@ export const Navbar = () => {
                     {/* Мобильное и десктопное меню */}
                     <div
                         id="mobile-dropdown"
-                        className={`${isMobileMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto md:bg-transparent xs:bg-black md:dark:bg-transparent xs:dark:bg-gray-900`}
+                        className={`${isMobileMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`}
                     >
-                        <ul className="flex flex-col font-medium p-4 md:p-0 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+                        <ul className="flex flex-col gap-10 mt-10 font-medium md:p-0 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
                             role="menubar">
                             <li role="none">
                                 <NavLink
@@ -109,7 +109,7 @@ export const Navbar = () => {
                                         handleClick();
                                     }}
                                     className={({isActive}) =>
-                                        `block py-2 px-3 md:p-0 uppercase transition ${
+                                        `block ml-10 md:p-0 uppercase transition ${
                                             isActive ? 'text-[var(--oringe)] font-bold' : 'text-black hover:text-[var(--oringe)]'
                                         }`
                                     }
@@ -125,7 +125,7 @@ export const Navbar = () => {
                                     to={ROUTES.ABOUT_US}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({isActive}) =>
-                                        `block py-2 px-3 rounded md:p-0 uppercase transition ${
+                                        `block ml-10 rounded md:p-0 uppercase transition ${
                                             isActive ? 'text-[var(--oringe)] font-bold' : 'text-black hover:text-[var(--oringe)]'
                                         }`
                                     }
@@ -142,7 +142,7 @@ export const Navbar = () => {
                                     aria-haspopup="true"
                                     aria-expanded={isSitesDropdownOpen}
                                     aria-controls="sites-dropdown"
-                                    className="flex items-center justify-between w-full py-2 px-3 text-black hover:text-[var(--oringe)] transition md:p-0 md:w-auto sites-toggle uppercase"
+                                    className="flex items-center ml-10 justify-start gap-3 w-full text-black hover:text-[var(--oringe)] transition md:p-0 md:w-auto sites-toggle uppercase"
                                     onClick={() => setIsSitesDropdownOpen(!isSitesDropdownOpen)}
                                     role="menuitem"
                                 >
@@ -166,14 +166,14 @@ export const Navbar = () => {
 
                                 <div
                                     id="sites-dropdown"
-                                    className={`z-50 ${isSitesDropdownOpen ? '' : 'hidden'} absolute left-0 md:left-1/2 md:-translate-x-1/2 mt-2 bg-white rounded-lg shadow-xl w-full md:w-[700px] lg:w-[900px] px-4 md:px-8 py-5`}
+                                    className={`z-50 ${isSitesDropdownOpen ? '' : 'hidden'} absolute left-0 md:left-1/2 md:-translate-x-1/2 mt-7 bg-white w-full md:w-[700px] lg:w-[1200px] px-4 md:px-8 py-5`}
                                 >
                                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                                         {services.map((item) => (
                                             <div key={item.id}>
                                                 <NavLink
                                                     to={item.href}
-                                                    className="block text-gray-800 hover:text-[var(--oringe)] transition"
+                                                    className="block text-gray-600 hover:text-[var(--oringe)] transition"
                                                     onClick={() => {
                                                         setIsMobileMenuOpen(false);
                                                         setIsSitesDropdownOpen(false);
@@ -195,7 +195,7 @@ export const Navbar = () => {
                                     to={ROUTES.CONDITIONS}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({isActive}) =>
-                                        `block py-2 px-3 rounded md:p-0 uppercase transition ${
+                                        `block ml-10 rounded md:p-0 uppercase transition ${
                                             isActive ? 'text-[var(--oringe)] font-bold' : 'text-black hover:text-[var(--oringe)]'
                                         }`
                                     }
@@ -210,7 +210,7 @@ export const Navbar = () => {
                                     to={ROUTES.CONTACT}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({isActive}) =>
-                                        `block py-2 px-3 rounded md:p-0 uppercase transition ${
+                                        `block ml-10 rounded md:p-0 uppercase transition ${
                                             isActive ? 'text-[var(--oringe)] font-bold' : 'text-black hover:text-[var(--oringe)]'
                                         }`
                                     }

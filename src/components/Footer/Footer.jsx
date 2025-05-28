@@ -11,7 +11,7 @@ export const FooterComponent = () => {
     const year = new Date().getFullYear();
 
     return (
-        <Footer className="bg-white" aria-label="Footer section">
+        <Footer className="bg-white border-t-2 border-gray-200" aria-label="Footer section">
             <div className="w-full">
                 <div className="grid max-w-7xl mx-auto grid-cols-1 gap-8 px-6 py-8 md:grid-cols-2">
                     <section aria-labelledby="footer-about-company">

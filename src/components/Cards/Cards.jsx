@@ -24,10 +24,9 @@ export function Cards() {
                      role="presentation"></div>
 
                 {/* Уточнённое описание для ключей */}
-                <p className="text-center max-w-5xl mx-auto mb-12 text-lg text-gray-700 leading-relaxed tracking-wide">
+                <p className="text-center max-w-5xl mx-auto mb-12 text-lg leading-10 text-gray-700 tracking-wide">
                     Ознакомьтесь с полным ассортиментом наших профессиональных услуг по бесплатному вывозу старой
-                    техники, утилизации бытовой электроники и экологичной переработке. Мы гарантируем индивидуальный
-                    подход, высокий уровень сервиса и заботу о природе.
+                    техники. Мы гарантируем индивидуальный подход, высокий уровень сервиса и заботу о природе.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">

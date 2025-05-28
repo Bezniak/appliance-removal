@@ -81,7 +81,7 @@ export default function About() {
                     className="container mx-auto py-16 px-4 space-y-10"
                     aria-label="Причины утилизации техники"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-center">
+                    <h2 className="text-3xl md:text-4xl text-center">
                         Ответственный сбор техники — первый шаг к защите природы
                     </h2>
                     <div className="grid md:grid-cols-3 gap-8">
@@ -107,7 +107,7 @@ export default function About() {
                 >
                     <div className="absolute inset-0 bg-black/50 z-0" aria-hidden="true"/>
                     <div className="relative z-10 text-white px-4">
-                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Как мы работаем</h2>
+                        <h2 className="text-3xl md:text-4xl text-center mb-12">Как мы работаем</h2>
                         <div className="container mx-auto grid md:grid-cols-4 gap-6 text-center">
                             {howItWorksSteps.map(([emoji, title, desc], index) => (
                                 <article
@@ -127,10 +127,10 @@ export default function About() {
                     initial={{opacity: 0, x: 30}}
                     whileInView={{opacity: 1, x: 0}}
                     transition={{duration: 0.8}}
-                    className="space-y-12 px-4 py-16 bg-gray-50"
+                    className="space-y-12 px-4  bg-gray-50"
                     aria-label="Ценности компании"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-center">Наши ценности</h2>
+                    <h2 className="text-3xl md:text-4xl text-center">Наши ценности</h2>
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {values.map((item, index) => (
                             <article
@@ -139,8 +139,8 @@ export default function About() {
                             >
                                 {item.icon}
                                 <div>
-                                    <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                                    <p className="text-gray-600">{item.desc}</p>
+                                    <h3 className="text-xl mb-1">{item.title}</h3>
+                                    <p className="text-gray-500">{item.desc}</p>
                                 </div>
                             </article>
                         ))}
@@ -154,7 +154,7 @@ export default function About() {
                     className="text-center space-y-6 bg-gray-700 py-20 px-4"
                     aria-label="Призыв к действию"
                 >
-                    <h2 className="text-3xl md:text-4xl text-white font-bold">Готовы освободить пространство?</h2>
+                    <h2 className="text-3xl md:text-4xl text-white">Готовы освободить пространство?</h2>
                     <p className="text-white text-lg mb-16">Заполните заявку — и мы приедем в удобное для вас время.</p>
                     <NavLink
                         to={ROUTES.BOOKING}
