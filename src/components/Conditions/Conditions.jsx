@@ -70,7 +70,7 @@ export const Conditions = () => {
 
                         >
                             <img
-                                src="/condition_img.jpeg"
+                                src="/OldTechnics.png"
                                 alt="Вывоз техники минск"
                                 className="w-full h-auto max-w-md mx-auto md:mx-0"
                                 loading="lazy"

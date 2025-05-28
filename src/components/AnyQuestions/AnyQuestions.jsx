@@ -10,13 +10,13 @@ export const AnyQuestions = () => {
             itemType="http://schema.org/LocalBusiness"
         >
             {/* Градиентный overlay поверх изображения */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-0" />
 
             {/* Контент */}
             <div className="relative z-10 flex items-center justify-center h-full px-4">
                 <div className="max-w-3xl text-center animate-fade-in-up">
                     <h1
-                        className="text-4xl leading-tight md:text-5xl font-bold text-white drop-shadow-md mb-4"
+                        className="text-4xl leading-tight md:text-4xl text-white drop-shadow-md mb-4"
                         itemProp="headline"
                     >
                         ОСТАЛИСЬ ВОПРОСЫ? ПОЗВОНИТЕ НАМ!
@@ -35,7 +35,7 @@ export const AnyQuestions = () => {
                     <a
                         href="tel:+375297621847"
                         aria-label="Позвонить по номеру +375 29 762 18 47"
-                        className="inline-block text-4xl md:text-5xl font-extrabold text-[var(--oringe)] hover:text-lime-500 drop-shadow-lg transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-lime-400 rounded select-none"
+                        className="inline-block bg-[var(--oringe)] py-3 px-8 rounded-lg text-white text-2xl hover:bg-lime-600 transition"
                         itemProp="telephone"
                     >
                         +375 29 762 18 47

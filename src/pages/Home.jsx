@@ -33,11 +33,11 @@ const Home = () => {
                 keywords={keywords}
             />
             <main>
-                <Carousel/>
+                <Hero/>
                 <Welcome/>
                 <ServiceJsonLd/>
                 <Cards/>
-                <Hero/>
+                {/*<Carousel/>*/}
                 <HowWeWork/>
                 <TestimonialsSlider/>
                 <AnyQuestions/>

@@ -68,9 +68,9 @@ export default function HowWeWork({title}) {
                         ) : (
                             <h2
                                 id="how-we-work-title"
-                                className="text-3xl md:text-5xl text-gray-900 leading-tight"
+                                className="text-3xl md:text-4xl text-gray-900 leading-tight"
                             >
-                                Бесплатный вывоз <span className="text-lime-600">любых видов техники</span> в Минске
+                                Бесплатный вывоз <span className="text-lime-600">любых видов бытовой техники</span> в Минске
                             </h2>
                         )}
                         <div

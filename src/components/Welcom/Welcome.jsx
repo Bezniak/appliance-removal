@@ -40,7 +40,7 @@ const Welcome = () => {
                 {/* Анимированное изображение */}
                 <div className="w-full md:w-1/2 flex justify-center">
                     <motion.img
-                        src="/man_1.png"
+                        src="/condition_img.jpeg"
                         alt="Вывоз бытовой техники в Минске — изображение"
                         className="max-w-full h-auto"
                         loading="lazy"
@@ -59,7 +59,7 @@ const Welcome = () => {
                         Добро пожаловать в компанию
                         <br />
                         <motion.span
-                            className="text-[var(--oringe)] font-bold block mt-3"
+                            className="text-lime-600 font-bold block mt-3"
                             variants={textVariants}
                             custom={2}
                         >
@@ -75,7 +75,7 @@ const Welcome = () => {
                         custom={3}
                     >
                         Вывезем вашу старую технику из любой точки Минска — бесплатно,
-                        аккуратно и уже сегодня или завтра, без ожиданий и лишних хлопот.
+                        аккуратно сегодня или завтра, без ожиданий и лишних хлопот.
                     </motion.p>
 
                     <motion.div
@@ -88,14 +88,14 @@ const Welcome = () => {
                         <NavLink
                             to={ROUTES.ABOUT_US}
                             onClick={handleClick}
-                            className="!bg-[var(--oringe)] !hover:bg-lime-600 text-white text-lg md:text-xl tracking-widest font-bold uppercase px-7 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
+                            className="bg-lime-600 hover:bg-[var(--oringe)] text-white text-lg md:text-xl tracking-widest font-bold uppercase px-7 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
                             aria-label="Подробнее о компании Вывоз Техники"
                         >
                             Подробнее
                         </NavLink>
                         <a
                             href="tel:+375297621847"
-                            className="hidden md:flex items-center gap-2 text-xl font-bold text-[var(--oringe)] hover:text-lime-600 transition"
+                            className="hidden md:flex items-center gap-2 text-xl font-bold text-lime-600 hover:text-[var(--oringe)] transition"
                             aria-label="Позвонить по телефону +375 29 762 18 47"
                         >
                             <FaPhoneAlt className="w-6 h-6" aria-hidden="true" />

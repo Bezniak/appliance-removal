@@ -6,12 +6,13 @@ import {Link} from "react-router-dom";
 import {services} from "../../store/data.js";
 import {FaViber} from "react-icons/fa";
 import {handleClick} from "../../common/helpers.js";
+import {SiGmail} from "react-icons/si";
 
 export const FooterComponent = () => {
     const year = new Date().getFullYear();
 
     return (
-        <Footer className="bg-white border-t-2 border-gray-200" aria-label="Footer section">
+        <Footer className="!bg-gray-700 rounded-none" aria-label="Footer section">
             <div className="w-full">
                 <div className="grid max-w-7xl mx-auto grid-cols-1 gap-8 px-6 py-8 md:grid-cols-2">
                     <section aria-labelledby="footer-about-company">
@@ -53,7 +54,7 @@ export const FooterComponent = () => {
                     </section>
                     <section aria-labelledby="footer-services">
                         <FooterTitle id="footer-services" title="Оказываемые услуги"/>
-                        <FooterLinkGroup className="grid w-full grid-cols-2 gap-4 md:grid-cols-2">
+                        <FooterLinkGroup className="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
                             {services?.map(({id, href, title}) => (
                                 <FooterLink
                                     key={id}
@@ -109,10 +110,18 @@ export const FooterComponent = () => {
                             rel="noopener noreferrer"
                             aria-label="Telegram"
                         />
+                        <FooterIcon
+                            href="mailto:tehnikivyvoz@gmail.com"
+                            icon={SiGmail}
+                            className="text-white hover:text-lime-600 transition text-4xl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Email"
+                        />
                     </nav>
                 </div>
 
-                <div className="bg-gray-700 mx-auto text-center py-8 font-normal">
+                <div className="bg-gray-800 mx-auto text-center py-8 font-normal">
                     <p className="text-white text-sm">
                         Приложение разработал&nbsp;
                         <a

@@ -16,8 +16,8 @@ export function Cards() {
         <section className="bg-gradient-to-r from-green-50 via-white to-green-50" aria-label="Услуги компании">
             <div className="max-w-7xl mx-auto px-6 py-12">
                 {/* Заголовок раздела с ключевыми словами */}
-                <h2 className="text-4xl mb-4 text-center drop-shadow-md font-semibold">
-                    Представляем наши услуги по вывозу техники в Минске
+                <h2 className="text-4xl mb-4 text-center">
+                    Вывозим все виды бытовой техники в Минске
                 </h2>
 
                 <div className="mx-auto my-5 w-72 h-1 bg-gradient-to-r from-lime-400 to-lime-600 rounded-full shadow-md"
@@ -25,8 +25,8 @@ export function Cards() {
 
                 {/* Уточнённое описание для ключей */}
                 <p className="text-center max-w-5xl mx-auto mb-12 text-lg leading-10 text-gray-700 tracking-wide">
-                    Ознакомьтесь с полным ассортиментом наших профессиональных услуг по бесплатному вывозу старой
-                    техники. Мы гарантируем индивидуальный подход, высокий уровень сервиса и заботу о природе.
+                    Бесплатный вывоз старой бытовой техники в Минске — надёжно, удобно и быстро. Мы подходим к
+                    каждому заказу с вниманием и профессионализмом.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
@@ -43,7 +43,6 @@ export function Cards() {
                                     <img
                                         src={img}
                                         alt={`Фото услуги: ${title}`}
-                                        loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                                         itemProp="image"
                                     />

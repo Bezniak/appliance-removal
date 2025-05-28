@@ -68,8 +68,8 @@ export default function About() {
                 ]}
             />
             <FirstPageScreen
-                title="Экологично. Бесплатно. Профессионально."
-                description="Мы — компания по вывозу старой бытовой техники в Минске. Наша цель — не просто избавиться от хлама, а помочь природе и людям. Мы делаем это абсолютно бесплатно, безопасно и с заботой о будущем."
+                title="Бесплатный вывоз бытовой техники — быстро и профессионально"
+                description="Освободите пространство уже сегодня — оформите бесплатный вывоз старой техники без хлопот и затрат. Просто оставьте заявку, и мы всё сделаем сами."
                 img="/aboutUs.jpg"
             />
 
@@ -81,8 +81,8 @@ export default function About() {
                     className="container mx-auto py-16 px-4 space-y-10"
                     aria-label="Причины утилизации техники"
                 >
-                    <h2 className="text-3xl md:text-4xl text-center">
-                        Ответственный сбор техники — первый шаг к защите природы
+                    <h2 className="max-w-5xl mx-auto leading-12 text-3xl md:text-4xl text-center">
+                        Бесплатный вывоз бытовой техники — простой шаг к защите окружающей среды!
                     </h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {techReasons.map((item, index) => (

@@ -23,7 +23,7 @@ export const FirstPageScreen = ({ title, description, img }) => {
                 aria-hidden="true"
             />
 
-            <div className="absolute inset-0 w-full flex flex-col items-center justify-center px-4 text-center">
+            <div className="absolute inset-0 max-w-7xl mx-auto flex flex-col items-center justify-center px-4 text-center">
                 <motion.h1
                     className="z-10 text-white text-4xl md:text-5xl mb-10 px-6 tracking-tight drop-shadow-lg"
                     initial={{ opacity: 0, y: -50 }}

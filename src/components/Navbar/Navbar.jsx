@@ -44,13 +44,13 @@ export const Navbar = () => {
         <header>
             <ContactInfoNavbar/>
             <nav aria-label="Основное меню" className="border-gray-200 w-full">
-                <div className="mx-auto flex flex-wrap items-center justify-center px-3 py-7">
+                <div className="mx-auto flex flex-wrap items-center justify-center py-7">
                     <div className="flex justify-between items-center w-full">
 
                         {/* Логотип (ссылка на главную) */}
                         <NavLink
                             to={ROUTES.HOME}
-                            className="md:hidden flex flex-col items-center justify-center"
+                            className="md:hidden pl-3 flex flex-col items-center justify-center"
                             aria-label="Перейти на главную страницу"
                         >
                             <img src="/logo.svg" alt="Логотип компании" width={40} height={40}/>
@@ -68,7 +68,7 @@ export const Navbar = () => {
                         {/* Кнопка открытия мобильного меню */}
                         <button
                             type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 mobile-toggle"
+                            className="inline-flex items-center mr-3 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 mobile-toggle"
                             aria-controls="mobile-dropdown"
                             aria-expanded={isMobileMenuOpen}
                             aria-label={isMobileMenuOpen ? "Закрыть главное меню" : "Открыть главное меню"}

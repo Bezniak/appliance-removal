@@ -5,7 +5,7 @@ import {ROUTES} from "../../config/routes.js";
 const Hero = () => {
     return (
         <section
-            className="relative h-screen bg-cover bg-center bg-fixed"
+            className="relative md:h-[80vh] bg-cover bg-center bg-fixed"
             style={{backgroundImage: "url('/heroBg.jpg')"}}
             aria-label="Главный баннер - услуга вывоза старой техники в Минске"
         >
@@ -15,7 +15,7 @@ const Hero = () => {
             {/* Контент поверх затемнения */}
             <div className="relative z-10 flex items-center justify-center h-full px-4">
                 <div
-                    className="relative border-4 border-white/30 bg-white/10 backdrop-blur-sm p-10 rounded-md text-center max-w-4xl"
+                    className="relative bg-white/10 backdrop-blur-xs p-10 rounded-md text-center max-w-4xl"
                     role="region"
                     aria-labelledby="hero-title"
                     aria-describedby="hero-desc"
@@ -24,7 +24,7 @@ const Hero = () => {
                         id="hero-title"
                         className="text-3xl md:text-5xl text-white mb-4"
                     >
-                        Нужно срочно избавиться от старой техники?
+                        Нужно срочно избавиться от старой бытовой техники?
                     </h1>
                     <div
                         className="mt-4 mb-10 w-1/2 h-1 mx-auto bg-gradient-to-r from-yellow-300 to-[var(--oringe)] rounded-full shadow-md"
@@ -38,16 +38,29 @@ const Hero = () => {
                         Освободите место в доме уже сегодня — мы сами всё вынесем и погрузим.
                     </p>
 
-                    {/* Кнопка выходит за рамку вниз */}
-                    <NavLink
-                        to={ROUTES.BOOKING}
-                        className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[var(--oringe)] hover:bg-lime-600 uppercase tracking-widest text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95"
-                        type="button"
-                        aria-label="Заказать вывоз старой техники"
-                        onClick={handleClick}
-                    >
-                        Заказать вывоз
-                    </NavLink>
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
+                        <NavLink
+                            to={ROUTES.BOOKING}
+                            className="w-64 bg-[var(--oringe)] hover:bg-lime-600 uppercase tracking-widest text-white font-semibold py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95 text-center"
+                            type="button"
+                            aria-label="Заказать вывоз старой техники"
+                            onClick={handleClick}
+                        >
+                            Заказать вывоз
+                        </NavLink>
+
+                        <a
+                            href="tel:+375333669979"
+                            className="w-64 bg-[var(--oringe)] hover:bg-lime-600 text-white font-semibold py-4 rounded-lg shadow-lg transition-transform hover:scale-105 active:scale-95 text-center"
+                            type="button"
+                            aria-label="Заказать вывоз старой техники"
+                            onClick={handleClick}
+                        >
+                            +375 29 762 18 47
+                        </a>
+                    </div>
+
+
                 </div>
             </div>
         </section>

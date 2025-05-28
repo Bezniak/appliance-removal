@@ -2,15 +2,16 @@ import React from 'react';
 import ContactForm from "./ContactForm.jsx";
 import {FiMail, FiMapPin, FiPhone} from 'react-icons/fi';
 import Map from './Map';
-import {BsInstagram, BsTelegram} from "react-icons/bs";
+import {BsFacebook, BsInstagram, BsTelegram} from "react-icons/bs";
 import {FaViber} from "react-icons/fa";
 import {FirstPageScreen} from "../FirstPageScreen/FirstPageScreen.jsx";
 import Seo from "../SEO/Seo.jsx";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import {SiGmail} from "react-icons/si";
 
 export const Contacts = () => {
     const fadeSlideUp = {
-        hidden: { opacity: 0, y: 40 },
+        hidden: {opacity: 0, y: 40},
         visible: {
             opacity: 1,
             y: 0,
@@ -53,7 +54,7 @@ export const Contacts = () => {
                         className="space-y-8"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{once: false, amount: 0.3}}
                         variants={fadeSlideUp}
                     >
                         <h2 id="contact-info-heading" className="text-4xl text-center md:text-left">
@@ -86,11 +87,11 @@ export const Contacts = () => {
                                     className="text-gray-600 text-2xl group-hover:text-[var(--oringe)] transition-colors duration-200"
                                 />
                                 <a
-                                    href="mailto:info@example.com"
+                                    href="mailto:tehnikivyvoz@gmail.com"
                                     className="text-gray-600 text-lg group-hover:text-[var(--oringe)] transition-colors duration-200"
                                     aria-label="Отправить email на info@example.com"
                                 >
-                                    info@example.com
+                                    tehnikivyvoz@gmail.com
                                 </a>
                             </div>
 
@@ -129,6 +130,24 @@ export const Contacts = () => {
                                 >
                                     <BsTelegram/>
                                 </a>
+                                <a
+                                    href="mailto:tehnikivyvoz@gmail.com"
+                                    className="text-lime-600 hover:text-[var(--oringe)] transition text-4xl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Email"
+                                >
+                                    <SiGmail/>
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/vanja.besnjak/"
+                                    className="text-lime-600 hover:text-[var(--oringe)] transition text-4xl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Facebook"
+                                >
+                                    <BsFacebook/>
+                                </a>
                             </nav>
                         </address>
                     </motion.article>
@@ -138,7 +157,7 @@ export const Contacts = () => {
                         aria-label="Форма обратной связи"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{once: false, amount: 0.3}}
                         variants={fadeSlideUp}
                     >
                         <ContactForm/>
