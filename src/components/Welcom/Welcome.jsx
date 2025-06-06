@@ -30,7 +30,7 @@ const Welcome = () => {
 
     return (
         <section
-            className="flex items-center bg-white md:py-20"
+            className="flex items-center bg-white"
             aria-label="Добро пожаловать в компанию Вывоз Техники"
         >
             <div
@@ -63,7 +63,7 @@ const Welcome = () => {
                             variants={textVariants}
                             custom={2}
                         >
-                            "ВЫВОЗ ТЕХНИКИ"
+                            "ВЫВОЗ БЫТОВОЙ ТЕХНИКИ"
                         </motion.span>
                     </motion.h1>
 

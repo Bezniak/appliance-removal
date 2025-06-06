@@ -71,6 +71,7 @@ export default function About() {
                 title="Бесплатный вывоз бытовой техники — быстро и профессионально"
                 description="Освободите пространство уже сегодня — оформите бесплатный вывоз старой техники без хлопот и затрат. Просто оставьте заявку, и мы всё сделаем сами."
                 img="/aboutUs.jpg"
+                showButton={true}
             />
 
             <main className="bg-white text-gray-900 space-y-24">
@@ -151,7 +152,7 @@ export default function About() {
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.8}}
-                    className="text-center space-y-6 bg-gray-700 py-20 px-4"
+                    className="text-center space-y-6 bg-gradient-to-b from-gray-600 via-gray-700 to-gray-800 py-20 px-4"
                     aria-label="Призыв к действию"
                 >
                     <h2 className="text-3xl md:text-4xl text-white">Готовы освободить пространство?</h2>

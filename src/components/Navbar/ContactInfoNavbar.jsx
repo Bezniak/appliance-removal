@@ -14,6 +14,7 @@ export const ContactInfoNavbar = () => {
                     <img src="/logo.svg" alt="Логотип компании Вывоз техники" width={52} height={52}/>
                     <div className="flex flex-col items-center justify-center">
                         <span className="uppercase font-black text-lime-600 leading-none select-none">Вывоз</span>
+                        <span className="uppercase font-black text-lime-600 leading-none select-none">бытовой</span>
                         <span className="uppercase font-black text-lime-600 leading-none select-none">техники</span>
                     </div>
                 </Link>

@@ -16,8 +16,8 @@ export const FooterComponent = () => {
             <div className="w-full">
                 <div className="grid max-w-7xl mx-auto grid-cols-1 gap-8 px-6 py-8 md:grid-cols-2">
                     <section aria-labelledby="footer-about-company">
-                        <FooterTitle id="footer-about-company" title="О КОМПАНИИ"/>
-                        <FooterLinkGroup col>
+                        <FooterTitle id="footer-about-company" className='text-white' title="О КОМПАНИИ"/>
+                        <FooterLinkGroup col className='text-white'>
                             <Link
                                 to={ROUTES.ABOUT_US}
                                 className="hover:text-lime-600 hover:underline transition"
@@ -53,13 +53,13 @@ export const FooterComponent = () => {
                         </FooterLinkGroup>
                     </section>
                     <section aria-labelledby="footer-services">
-                        <FooterTitle id="footer-services" title="Оказываемые услуги"/>
-                        <FooterLinkGroup className="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
+                        <FooterTitle id="footer-services" className='text-white' title="Оказываемые услуги"/>
+                        <FooterLinkGroup className="grid w-full grid-cols-2 gap-4 md:grid-cols-2">
                             {services?.map(({id, href, title}) => (
                                 <FooterLink
                                     key={id}
                                     href={href}
-                                    className="hover:text-lime-600 transition"
+                                    className="hover:text-lime-600 transition text-white"
                                     aria-label={`Услуга: ${title}`}
                                     onClick={handleClick}
                                 >

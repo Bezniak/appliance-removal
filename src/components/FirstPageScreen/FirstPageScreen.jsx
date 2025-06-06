@@ -1,7 +1,9 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "../../config/routes.js";
 
-export const FirstPageScreen = ({ title, description, img }) => {
+export const FirstPageScreen = ({ title, description, img, showButton}) => {
     return (
         <section
             className="relative h-screen md:h-[80vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center"
@@ -41,6 +43,17 @@ export const FirstPageScreen = ({ title, description, img }) => {
                 >
                     {description}
                 </motion.p>
+
+                {showButton && (
+                    <NavLink
+                        to={ROUTES.BOOKING}
+                        className="!bg-lime-600 mt-10 uppercase !hover:bg-[var(--oringe)] text-white font-semibold px-5 py-3 rounded-lg shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+                        aria-label="Подать заявку на вывоз техники"
+                        type="button"
+                    >
+                        Подать заявку
+                    </NavLink>
+                )}
             </div>
         </section>
     )

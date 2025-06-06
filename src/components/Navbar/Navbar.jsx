@@ -168,7 +168,7 @@ export const Navbar = () => {
                                     id="sites-dropdown"
                                     className={`z-50 ${isSitesDropdownOpen ? '' : 'hidden'} absolute left-0 md:left-1/2 md:-translate-x-1/2 mt-7 bg-white w-full md:w-[700px] lg:w-[1200px] px-4 md:px-8 py-5`}
                                 >
-                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                                         {services.map((item) => (
                                             <div key={item.id}>
                                                 <NavLink
