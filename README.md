@@ -1,12 +1,53 @@
-# React + Vite
+🌿 https://7083.by/ — Electronics Collection and Recycling Website
+7083.by is a modern, eco-conscious website developed for a company specializing in the collection and recycling of household and electronic equipment in Minsk.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔍 Project Goal
+To create an intuitive, responsive, and informative platform that helps individuals and organizations:
 
-Currently, two official plugins are available:
+Learn how to dispose of electronics safely and sustainably
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Contact the company to arrange equipment pickup
 
-## Expanding the ESLint configuration
+Review acceptance guidelines and the list of recyclable items
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Quickly find answers to frequently asked questions
+
+⚙️ Technologies Used
+
+React – for building a responsive user interface
+
+Tailwind CSS – for fast and adaptive design
+
+Vite – for rapid development and build processes
+
+Framer Motion and Swiper – for animations and sliders
+
+React Hook Form – for form validation
+
+💼 Implemented Features
+
+A homepage with key information
+
+Dedicated pages: “About Us,” “Services,” “Contact,” “Pickup Terms,” and “Accepted Items”
+
+Interactive request form
+
+Fully responsive mobile version
+
+SEO & Accessibility:
+
+Semantic HTML markup
+
+Open Graph and meta tags
+
+Favicon and manifest.json
+
+Adaptive design for all devices
+
+Fast page load with Vite and resource optimization
+
+🖥 This project is aimed at promoting environmental awareness and simplifying the recycling process for both individuals and businesses.
+
+Developer: Ivan Beznyak
+Telegram: @ivan_bezniak
+Email: ivan.bezniak@gmail.com
