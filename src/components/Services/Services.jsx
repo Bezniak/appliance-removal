@@ -19,6 +19,9 @@ export default function Service() {
 
     const keywords = [
         'бесплатный вывоз техники',
+        'заказать вывоз холодильника',
+        'заказать вывоз стиральной машины',
+        'вывоз плиты газовой',
         'утилизация бытовой техники',
         'экологичный вывоз',
         'вывоз старой техники в Минске',
@@ -56,7 +59,7 @@ export default function Service() {
                             <div className="md:w-1/2">
                                 <img
                                     src="/moving.png"
-                                    alt="Организация пространства"
+                                    alt="вывоз холодильников и морозильников минск"
                                     className="w-full h-32 md:h-44 object-contain"
                                 />
                             </div>
@@ -78,7 +81,7 @@ export default function Service() {
                             <div className="md:w-1/2">
                                 <img
                                     src="/guaranteed.png"
-                                    alt="Довольный клиент"
+                                    alt="вывоз бытовой техники в минске"
                                     className="w-full h-32 md:h-44 object-contain"
                                 />
                             </div>
@@ -100,7 +103,7 @@ export default function Service() {
                             <div className="md:w-1/2">
                                 <img
                                     src="/eco-friendly.png"
-                                    alt="Экология"
+                                    alt="заказать вывоз старой техники минск"
                                     className="w-full h-32 md:h-44 object-contain"
                                 />
                             </div>

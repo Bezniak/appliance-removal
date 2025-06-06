@@ -31,7 +31,7 @@ const Welcome = () => {
     return (
         <section
             className="flex items-center bg-white"
-            aria-label="Добро пожаловать в компанию Вывоз Техники"
+            aria-label="Добро пожаловать в компанию 7083.by"
         >
             <div
                 ref={ref}
@@ -41,7 +41,7 @@ const Welcome = () => {
                 <div className="w-full md:w-1/2 flex justify-center">
                     <motion.img
                         src="/condition_img.jpeg"
-                        alt="Вывоз бытовой техники в Минске — изображение"
+                        alt="Вывоз бытовой техники в Минске"
                         className="max-w-full h-auto"
                         loading="lazy"
                     />
@@ -63,7 +63,7 @@ const Welcome = () => {
                             variants={textVariants}
                             custom={2}
                         >
-                            "ВЫВОЗ БЫТОВОЙ ТЕХНИКИ"
+                            7083.by
                         </motion.span>
                     </motion.h1>
 

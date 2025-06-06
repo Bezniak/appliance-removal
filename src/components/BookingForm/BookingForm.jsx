@@ -32,44 +32,61 @@ export default function BookingForm() {
         },
     });
 
-    const sendTelegramMessage = async (data) => {
-        try {
-            const now = new Date();
-            const formattedDate = now.toLocaleDateString("ru-RU");
-            const formattedTime = now.toLocaleTimeString("ru-RU", {
-                hour: "2-digit",
-                minute: "2-digit",
-            });
-
-            const servicesText = data.selectedServices
-                .map((service) => service.label)
-                .join(", ");
-
-            const message = encodeURIComponent(
-                `📦 Новая заявка с сайта!\n\n` +
-                `🕒 Запись оформлена: ${formattedDate} в ${formattedTime}\n\n` +
-                `👤 Имя: ${data.name}\n` +
-                `📞 Телефон: ${data.phone}\n` +
-                `🏠 Адрес: ${data.address}\n` +  // добавляем адрес в сообщение
-                `🔧 Услуги: ${servicesText}\n`
-            );
-
-            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${message}`;
-
-            const response = await fetch(url, {method: "GET"});
-
-            if (!response.ok) throw new Error("Ошибка при отправке сообщения в Telegram");
-        } catch (error) {
-            throw error;
-        }
-    };
+    // const sendTelegramMessage = async (data) => {
+    //     try {
+    //         const now = new Date();
+    //         const formattedDate = now.toLocaleDateString("ru-RU");
+    //         const formattedTime = now.toLocaleTimeString("ru-RU", {
+    //             hour: "2-digit",
+    //             minute: "2-digit",
+    //         });
+    //
+    //         const servicesText = data.selectedServices
+    //             .map((service) => service.label)
+    //             .join(", ");
+    //
+    //         const message = encodeURIComponent(
+    //             `📦 Новая заявка с сайта!\n\n` +
+    //             `🕒 Запись оформлена: ${formattedDate} в ${formattedTime}\n\n` +
+    //             `👤 Имя: ${data.name}\n` +
+    //             `📞 Телефон: ${data.phone}\n` +
+    //             `🏠 Адрес: ${data.address}\n` +  // добавляем адрес в сообщение
+    //             `🔧 Услуги: ${servicesText}\n`
+    //         );
+    //
+    //         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${message}`;
+    //
+    //         const response = await fetch(url, {method: "GET"});
+    //
+    //         if (!response.ok) throw new Error("Ошибка при отправке сообщения в Telegram");
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // };
 
     const onSubmit = async (data) => {
         setSubmitError("");
         setIsSubmitting(true);
 
         try {
-            await sendTelegramMessage(data);
+            // await sendTelegramMessage(data);
+
+
+            // Отправка данных на сервер через PHP
+            const phpResponse = await fetch('/send-form.php', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    name: data.name,
+                    phone: data.phone,
+                    address: data.address,
+                    equipmentName: data.equipmentName,
+                    // date: selectedDate.toLocaleDateString('ru-RU')
+                })
+            });
+
+            if (!phpResponse.ok) {
+                throw new Error('Ошибка при отправке на сервер');
+            }
             setIsSubmitted(true);
             reset();
         } catch (error) {
@@ -133,8 +150,8 @@ export default function BookingForm() {
     return (
         <div>
             <FirstPageScreen
-                title="Забронируйте вывоз техники — быстро и бесплатно"
-                description="Оставьте заявку на бесплатный вывоз старой техники в Минске. Мы приедем в удобное время и экологично утилизируем ненужное оборудование."
+                title="Забронируйте вывоз бытовой техники — быстро и бесплатно"
+                description="Оставьте заявку на бесплатный вывоз старой бытовой техники в Минске. Мы приедем в удобное время и экологично утилизируем ненужное оборудование."
                 img="/book.jpeg"
             />
             <section

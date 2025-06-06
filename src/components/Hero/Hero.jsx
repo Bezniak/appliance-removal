@@ -5,7 +5,7 @@ import {ROUTES} from "../../config/routes.js";
 const Hero = () => {
     return (
         <section
-            className="relative h-screen md:h-[60vh] bg-cover bg-center bg-fixed"
+            className="relative md:h-[60vh] bg-cover bg-center bg-fixed"
             style={{backgroundImage: "url('/heroBg.jpg')"}}
             aria-label="Главный баннер - услуга вывоза старой техники в Минске"
         >
@@ -13,16 +13,16 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black/50 z-0" aria-hidden="true"/>
 
             {/* Контент поверх затемнения */}
-            <div className="relative z-10 flex items-center justify-center h-fit px-4">
+            <div className="relative z-10 flex items-center justify-center h-full px-4">
                 <div
-                    className="relative bg-white/10 backdrop-blur-xs p-10 rounded-md text-center max-w-4xl"
+                    className="relative bg-white/10 backdrop-blur-xs p-10 my-5 rounded-md text-center max-w-4xl"
                     role="region"
                     aria-labelledby="hero-title"
                     aria-describedby="hero-desc"
                 >
                     <h1
                         id="hero-title"
-                        className="text-3xl md:text-5xl text-white mb-4"
+                        className="text-2xl md:text-5xl text-white mb-4"
                     >
                         Нужно срочно избавиться от старой бытовой техники?
                     </h1>

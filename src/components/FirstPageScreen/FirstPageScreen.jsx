@@ -11,7 +11,7 @@ export const FirstPageScreen = ({ title, description, img, showButton}) => {
         >
             <motion.img
                 src={img}
-                alt={title} // динамический alt из title
+                alt={title}
                 className="absolute inset-0 w-full h-full object-cover"
                 initial={{ scale: 1.5, transformOrigin: 'center' }}
                 animate={{ scale: 1 }}

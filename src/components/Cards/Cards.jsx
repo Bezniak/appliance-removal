@@ -42,7 +42,7 @@ export function Cards() {
                                 <NavLink to={href} onClick={handleClick} aria-label={`Подробнее об услуге ${title}`}>
                                     <img
                                         src={img}
-                                        alt={`Фото услуги: ${title}`}
+                                        alt={`вывоз ${title}`}
                                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                                         itemProp="image"
                                     />

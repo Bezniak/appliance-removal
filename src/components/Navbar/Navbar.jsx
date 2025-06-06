@@ -53,7 +53,7 @@ export const Navbar = () => {
                             className="md:hidden pl-3 flex flex-col items-center justify-center"
                             aria-label="Перейти на главную страницу"
                         >
-                            <img src="/logo.svg" alt="Логотип компании" width={40} height={40}/>
+                            <img src="/logo.svg" alt="бесплатный вывоз бытовой техники в минске" width={40} height={40}/>
                         </NavLink>
 
                         {/* Телефон (только для мобильных) */}

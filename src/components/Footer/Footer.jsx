@@ -72,28 +72,28 @@ export const FooterComponent = () => {
 
                 <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
                     <FooterCopyright
-                        href={ROUTES.PP}
-                        by="ВЫВОЗ ТЕХНИКИ™"
+                        href={ROUTES.HOME}
+                        by="| 7083.by™"
                         className="text-white"
                         year={year}
                     />
                     <nav aria-label="Социальные сети" className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                        <FooterIcon
-                            href="https://www.facebook.com/vanja.besnjak/"
-                            icon={BsFacebook}
-                            className="text-white hover:text-lime-600 transition text-4xl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook"
-                        />
-                        <FooterIcon
-                            href="https://www.instagram.com/ivan_bezniak/"
-                            icon={BsInstagram}
-                            className="text-white hover:text-lime-600 transition text-4xl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram"
-                        />
+                        {/*<FooterIcon*/}
+                        {/*    href="https://www.facebook.com/vanja.besnjak/"*/}
+                        {/*    icon={BsFacebook}*/}
+                        {/*    className="text-white hover:text-lime-600 transition text-4xl"*/}
+                        {/*    target="_blank"*/}
+                        {/*    rel="noopener noreferrer"*/}
+                        {/*    aria-label="Facebook"*/}
+                        {/*/>*/}
+                        {/*<FooterIcon*/}
+                        {/*    href="https://www.instagram.com/ivan_bezniak/"*/}
+                        {/*    icon={BsInstagram}*/}
+                        {/*    className="text-white hover:text-lime-600 transition text-4xl"*/}
+                        {/*    target="_blank"*/}
+                        {/*    rel="noopener noreferrer"*/}
+                        {/*    aria-label="Instagram"*/}
+                        {/*/>*/}
                         <FooterIcon
                             href="viber://chat?number=%2B375297621847"
                             icon={FaViber}

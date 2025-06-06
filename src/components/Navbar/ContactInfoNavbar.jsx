@@ -11,11 +11,9 @@ export const ContactInfoNavbar = () => {
             {/* Логотип и бренд */}
             <div>
                 <Link to="/" className="flex items-center gap-3" aria-label="Главная страница — Вывоз техники">
-                    <img src="/logo.svg" alt="Логотип компании Вывоз техники" width={52} height={52}/>
+                    <img src="/logo.svg" alt="бесплатый вывоз техники в минске" width={52} height={52}/>
                     <div className="flex flex-col items-center justify-center">
-                        <span className="uppercase font-black text-lime-600 leading-none select-none">Вывоз</span>
-                        <span className="uppercase font-black text-lime-600 leading-none select-none">бытовой</span>
-                        <span className="uppercase font-black text-lime-600 leading-none select-none">техники</span>
+                        <span className="text-2xl font-black text-lime-600 leading-none select-none">7083.by</span>
                     </div>
                 </Link>
             </div>
