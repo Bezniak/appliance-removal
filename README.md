@@ -48,6 +48,6 @@ Fast page load with Vite and resource optimization
 
 🖥 This project is aimed at promoting environmental awareness and simplifying the recycling process for both individuals and businesses.
 
-Developer: Ivan Beznyak
+Developer: Ivan Bezniak
 Telegram: @ivan_bezniak
 Email: ivan.bezniak@gmail.com
