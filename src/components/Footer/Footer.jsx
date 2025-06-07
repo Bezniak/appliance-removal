@@ -71,12 +71,25 @@ export const FooterComponent = () => {
                 </div>
 
                 <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
-                    <FooterCopyright
-                        href={ROUTES.HOME}
-                        by="| 7083.by™"
-                        className="text-white"
-                        year={year}
-                    />
+                    <div className="flex flex-col sm:flex-row items-start sm:space-x-4">
+                        <FooterCopyright
+                            href="/"
+                            by={'| 7083.by'}
+                            year={year}
+                            className="transition text-white py-3 md:py-0"
+                        />
+                        <p className="text-sm text-white">
+                            Юридический адрес ОАО «Брест-ВТИ» г.Брест ул.Светлая 1, 224020
+                        </p>
+                        <a
+                            href="https://contragent.by/unp/200002340"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-lime-600 transition text-sm text-white"
+                        >
+                            УНП 200002340
+                        </a>
+                    </div>
                     <nav aria-label="Социальные сети" className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
                         {/*<FooterIcon*/}
                         {/*    href="https://www.facebook.com/vanja.besnjak/"*/}

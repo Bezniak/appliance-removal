@@ -6,6 +6,7 @@ import {NavLink} from "react-router-dom";
 import {ROUTES} from "../../config/routes.js";
 import {handleClick} from "../../common/helpers.js";
 import { motion } from "framer-motion";
+import Faq from "../FAQ/Faq.jsx";
 
 
 export const Conditions = () => {
@@ -98,6 +99,7 @@ export const Conditions = () => {
                     </section>
                 </div>
             </main>
+            <Faq/>
         </div>
     );
 };

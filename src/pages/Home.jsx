@@ -7,6 +7,8 @@ import {AnyQuestions} from "../components/AnyQuestions/AnyQuestions.jsx";
 import HowWeWork from "../components/HowWeWork/HowWeWork.jsx";
 import {ServiceJsonLd} from "../components/Cards/ServiceJsonLd.jsx";
 import Seo from "../components/SEO/Seo.jsx";
+import Numbers from "../components/Numbers/Numbers.jsx";
+import Faq from "../components/FAQ/Faq.jsx";
 
 const Home = () => {
     const title = "ВЫВОЗ ТЕХНИКИ";
@@ -42,7 +44,9 @@ const Home = () => {
                 <ServiceJsonLd/>
                 <Cards/>
                 <HowWeWork/>
+                <Numbers/>
                 <TestimonialsSlider/>
+                <Faq/>
                 <AnyQuestions/>
             </main>
         </>
